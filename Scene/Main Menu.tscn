@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Code/PlayButton.gd" type="Script" id=1]
+
+[node name="Main Menu" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 960.0
+margin_bottom = 544.0
+color = Color( 0.0784314, 0.215686, 0.505882, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 430.0
+margin_top = 206.0
+margin_right = 514.0
+margin_bottom = 220.0
+text = "TESTTESTTEST"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 346.0
+margin_top = 118.0
+margin_right = 594.0
+margin_bottom = 132.0
+text = "Objectif : menu comme portal/portal 2 et kirby
+f"
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 380.0
+margin_top = 264.0
+margin_right = 633.0
+margin_bottom = 321.0
+text = "Play"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]

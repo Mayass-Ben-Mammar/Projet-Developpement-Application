@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Arbres/SpriteMC.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Code/Test Perso.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36, 40 )
+
+[node name="Test Perso" type="KinematicBody2D"]
+collision_mask = 6
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3, 6 )
+frames = ExtResource( 1 )
+animation = "Inactif"
+speed_scale = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 9 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Clignement" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Clignement" to="." method="_on_Clignement_timeout"]
