@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Code/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Scene/Test Perso.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Piece/PieceT.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Background/BackgroundT.png" type="Texture" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Police d'écriture/Tiny5-Regular.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0.52549 )
@@ -17,6 +18,14 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -84,17 +93,21 @@ texture = ExtResource( 8 )
 expand = true
 
 [node name="X" type="Label" parent="HUD"]
-margin_left = 119.0
-margin_top = 56.0
-margin_right = 175.0
-margin_bottom = 70.0
-text = "::::::::::::::"
+margin_left = 114.0
+margin_top = 30.0
+margin_right = 173.0
+margin_bottom = 87.0
+custom_colors/font_color = Color( 0.698039, 0.639216, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = ":"
 
 [node name="NCoins" type="Label" parent="HUD"]
-margin_left = 182.0
-margin_top = 55.0
-margin_right = 225.0
-margin_bottom = 69.0
+margin_left = 132.0
+margin_top = 33.0
+margin_right = 208.0
+margin_bottom = 90.0
+custom_colors/font_color = Color( 0.698039, 0.639216, 0, 1 )
+custom_fonts/font = SubResource( 6 )
 text = "##"
 valign = 1
 
@@ -155,7 +168,7 @@ shape = SubResource( 1 )
 [node name="Dossier Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Dossier Coins" instance=ExtResource( 4 )]
-position = Vector2( 210, 16 )
+position = Vector2( 209, 13 )
 
 [node name="Coin2" parent="Dossier Coins" instance=ExtResource( 4 )]
 position = Vector2( 1315, 400 )
