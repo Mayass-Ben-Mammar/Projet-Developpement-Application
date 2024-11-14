@@ -41,6 +41,7 @@ func _on_Tete_body_entered(body):
 
 func _on_Cotes_body_entered(body):
 	if body.get_collision_layer() == 1:
+		Global.lose_life()
 		body.mal(position.x)
 	elif body.get_collision_layer() == 32:
 		body.queue_free()

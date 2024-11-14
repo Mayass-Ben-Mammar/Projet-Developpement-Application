@@ -18,6 +18,7 @@ position = Vector2( 3, 6 )
 frames = ExtResource( 1 )
 animation = "Inactif"
 speed_scale = 5.0
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 9 )
@@ -28,5 +29,10 @@ wait_time = 0.1
 
 [node name="Clignement" type="Timer" parent="."]
 
+[node name="Courir" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Clignement" to="." method="_on_Clignement_timeout"]
+[connection signal="timeout" from="Courir" to="." method="_on_Courir_timeout"]

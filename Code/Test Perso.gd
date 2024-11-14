@@ -3,13 +3,15 @@ extends KinematicBody2D
 enum States{AIR = 1, FLOOR, WALL}
 var state = States.FLOOR
 
-const SPEED = 200
-const RUNSPEED = 500 #à mettre plus tard pottentiellemnt utiliser 'lerp' pour avoir degrader de vitesse avec double click
+var SPEED = 200
+const RUNSPEED = 500
 const GRAVITY = 30
-const JFORCE = -900
+const JFORCE = -1000
 var Velocity = Vector2(0, 0)
 var Coins = 0
 var hurt = 0
+var double_tap = false
+var cours = false
 
 const LASER = preload("res://Scene/Laser.tscn")
 
@@ -31,27 +33,47 @@ func _physics_process(delta):
 				Velocity.x = lerp(Velocity.x, 0, 0.1)
 			move_and_fall()
 			Fire()
-			
 		States.FLOOR:
 			if not is_on_floor():
 				state = States.AIR
+			if cours == true:
+				SPEED = RUNSPEED
+			else:
+				SPEED = 200
 			if Input.is_action_pressed("right"):
+				if double_tap == true:
+					cours = true
+				elif is_on_wall():
+					rebond()
+					cours = false
 				Velocity.x = SPEED
 				$Sprite.play("Roule")
 				$Sprite.flip_h = false
 			elif Input.is_action_pressed("left"):
+				if double_tap == true:
+					cours = true
+				elif is_on_wall():
+					rebond()
+					cours = false
 				Velocity.x = -SPEED
 				$Sprite.play("Roule")
 				$Sprite.flip_h = true
 			else:
 				Velocity.x = lerp(Velocity.x, 0, 0.1)
 				$Sprite.play("Inactif")
-				Clignement()
 			if Input.is_action_just_pressed("jump"):
 				Velocity.y = JFORCE
 				state = States.AIR
 			if Input.is_action_just_pressed("down"):
 				position.y += 1
+			if Input.is_action_just_released("right"):
+				cours = false
+				double_tap = true
+				$Courir.start()
+			if Input.is_action_just_released("left"):
+				cours = false
+				double_tap = true
+				$Courir.start()
 			move_and_fall()
 			Fire()
 
@@ -92,6 +114,12 @@ func mal(var posx):
 	$Timer.start()
 
 
+func rebond():
+	print("test")#utiliser raycast
+	Input.action_release("left")
+	Input.action_release("right")
+
+
 func _on_Timer_timeout():
 	hurt -= 1
 	if hurt == 0:
@@ -108,3 +136,7 @@ func Clignement():
 
 func _on_Clignement_timeout():
 	$Sprite.play("Clignement")
+
+
+func _on_Courir_timeout():
+	double_tap = false
