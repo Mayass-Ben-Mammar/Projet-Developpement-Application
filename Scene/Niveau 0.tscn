@@ -167,7 +167,7 @@ shape = SubResource( 1 )
 
 [node name="Dossier Coins" type="Node2D" parent="."]
 
-[node name="Coin" parent="Dossier Coins" instance=ExtResource( 4 )]
+[node name="Coin1" parent="Dossier Coins" instance=ExtResource( 4 )]
 position = Vector2( 209, 13 )
 
 [node name="Coin2" parent="Dossier Coins" instance=ExtResource( 4 )]
@@ -208,7 +208,7 @@ drag_margin_v_enabled = true
 drag_margin_left = 0.3
 editor_draw_limits = true
 
-[connection signal="CoinCollected" from="Dossier Coins/Coin" to="HUD" method="_on_CoinCollected"]
+[connection signal="CoinCollected" from="Dossier Coins/Coin1" to="HUD" method="_on_CoinCollected"]
 [connection signal="CoinCollected" from="Dossier Coins/Coin2" to="HUD" method="_on_CoinCollected"]
 [connection signal="CoinCollected" from="Dossier Coins/Coin3" to="HUD" method="_on_CoinCollected"]
 [connection signal="body_entered" from="Fall zone" to="Test Perso" method="_on_Fall_zone_body_entered"]

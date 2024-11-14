@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Code/MainM.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Police d'écriture/Tiny5-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
 
 [node name="Perdu" type="Node"]
 
@@ -14,6 +24,7 @@ margin_left = 203.0
 margin_top = 225.0
 margin_right = 286.0
 margin_bottom = 239.0
+custom_fonts/font = SubResource( 1 )
 text = "T'es nul haha"
 
 [node name="Label2" type="Label" parent="."]
@@ -21,6 +32,7 @@ margin_left = 524.0
 margin_top = 338.0
 margin_right = 760.0
 margin_bottom = 352.0
+custom_fonts/font = SubResource( 2 )
 text = "appuie sur le boutton pour continuer"
 
 [node name="MainM" type="Button" parent="."]
@@ -28,6 +40,7 @@ margin_left = 49.0
 margin_top = 371.0
 margin_right = 935.0
 margin_bottom = 506.0
+custom_fonts/font = SubResource( 3 )
 text = "hahaahahahahahahhhahahahaha"
 script = ExtResource( 1 )
 
