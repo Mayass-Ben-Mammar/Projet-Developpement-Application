@@ -50,6 +50,8 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("jump"):
 				Velocity.y = JFORCE
 				state = States.AIR
+			if Input.is_action_just_pressed("down"):
+				position.y += 1
 			move_and_fall()
 			Fire()
 
