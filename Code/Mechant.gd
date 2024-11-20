@@ -27,16 +27,19 @@ func _physics_process(delta):
 
 
 func _on_Tete_body_entered(body):
-	$AnimatedSprite.play("Death")
-	speed = 0
-	set_collision_layer_bit(4, false)
-	set_collision_mask_bit(0, false)
-	$Tete.set_collision_layer_bit(4, false)
-	$Tete.set_collision_mask_bit(0, false)
-	$Cotes.set_collision_layer_bit(4, false)
-	$Cotes.set_collision_mask_bit(0, false)
-	$Timer.start()
-	body.bounce()
+	if body == PhysicsBody2D:
+		$AnimatedSprite.play("Death")
+		speed = 0
+		set_collision_layer_bit(4, false)
+		set_collision_mask_bit(0, false)
+		$Tete.set_collision_layer_bit(4, false)
+		$Tete.set_collision_mask_bit(0, false)
+		$Cotes.set_collision_layer_bit(4, false)
+		$Cotes.set_collision_mask_bit(0, false)
+		$Timer.start()
+		body.bounce()
+	else:
+		pass
 
 
 func _on_Cotes_body_entered(body):
