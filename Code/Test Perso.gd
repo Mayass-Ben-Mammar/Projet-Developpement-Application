@@ -100,7 +100,6 @@ func bounce():
 
 
 func mal(var posx):
-	Global.lose_life()
 	Velocity.y = JFORCE / 3
 	if position.x < posx:
 		Velocity.x = -800
