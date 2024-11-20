@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MATOS_Roule6.png-1a5b3df2ad0bb797d1a43dc60652b0c1.stex"
+path="res://.import/MATOS_tombe2.png-7f717c671fbf13ab1e283005b277ac63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PersoMC/Roule/MATOS_Roule6.png"
-dest_files=[ "res://.import/MATOS_Roule6.png-1a5b3df2ad0bb797d1a43dc60652b0c1.stex" ]
+source_file="res://Assets/PersoMC/Tombe/MATOS_tombe2.png"
+dest_files=[ "res://.import/MATOS_tombe2.png-7f717c671fbf13ab1e283005b277ac63.stex" ]
 
 [params]
 

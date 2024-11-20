@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MATOS_Roule4.png-25f640c8039de2d3cb572b6d059abeb8.stex"
+path="res://.import/MATOS_base.png-84074c712efdf3f2e22be25b3a4fd0d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PersoMC/Roule/MATOS_Roule4.png"
-dest_files=[ "res://.import/MATOS_Roule4.png-25f640c8039de2d3cb572b6d059abeb8.stex" ]
+source_file="res://Assets/PersoMC/Normal/MATOS_base.png"
+dest_files=[ "res://.import/MATOS_base.png-84074c712efdf3f2e22be25b3a4fd0d8.stex" ]
 
 [params]
 

@@ -12,6 +12,7 @@ var Coins = 0
 var hurt = 0
 var double_tap = false
 var cours = false
+var fonce_roule = "Roule"
 
 const LASER = preload("res://Scene/Laser.tscn")
 
@@ -22,7 +23,10 @@ func _physics_process(delta):
 			if is_on_floor():
 				state = States.FLOOR
 				continue
-			$Sprite.play("Air")
+			if Velocity.y < 0:
+				$Sprite.play("Saute")
+			else:
+				$Sprite.play("Tombe")
 			if Input.is_action_pressed("right"):
 				Velocity.x = SPEED
 				$Sprite.flip_h = false
@@ -38,8 +42,10 @@ func _physics_process(delta):
 				state = States.AIR
 			if cours == true:
 				SPEED = RUNSPEED
+				fonce_roule = "Fonce"
 			else:
 				SPEED = 200
+				fonce_roule = "Roule"
 			if Input.is_action_pressed("right"):
 				if double_tap == true:
 					cours = true
@@ -47,7 +53,7 @@ func _physics_process(delta):
 					rebond()
 					cours = false
 				Velocity.x = SPEED
-				$Sprite.play("Roule")
+				$Sprite.play(fonce_roule)
 				$Sprite.flip_h = false
 			elif Input.is_action_pressed("left"):
 				if double_tap == true:
@@ -56,7 +62,7 @@ func _physics_process(delta):
 					rebond()
 					cours = false
 				Velocity.x = -SPEED
-				$Sprite.play("Roule")
+				$Sprite.play(fonce_roule)
 				$Sprite.flip_h = true
 			else:
 				Velocity.x = lerp(Velocity.x, 0, 0.1)
