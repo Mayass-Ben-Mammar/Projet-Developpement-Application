@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Assets/TileSet_Labo/Tile6.png" type="Texture" id=1]
 [ext_resource path="res://Assets/TileSet_Labo/Tile3.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Assets/TileSet_Labo/Tile2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/TileSet_Labo/Tile4.png" type="Texture" id=11]
 [ext_resource path="res://Assets/TileSet_Labo/Tile10.png" type="Texture" id=12]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Code/Porte vers 0.gd" type="Script" id=15]
 [ext_resource path="res://Scene/Test Perso.tscn" type="PackedScene" id=16]
 
@@ -763,6 +765,13 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fall zone"]
 position = Vector2( 1426, 613.75 )
 shape = SubResource( 68 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="GUI" instance=ExtResource( 14 )]
+visible = false
+
+[node name="HUD" parent="GUI" instance=ExtResource( 13 )]
 
 [node name="Porte vers 0" type="Area2D" parent="."]
 script = ExtResource( 15 )
