@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 var Nb_Coins = 0
 
@@ -15,3 +15,5 @@ func _on_CoinCollected():
 
 func Load_hearts():
 	$coeurplein.rect_size.x = Global.lives * 64
+
+

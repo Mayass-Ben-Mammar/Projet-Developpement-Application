@@ -80,7 +80,7 @@ position = Vector2( -1, 0 )
 scale = Vector2( 1, 0.985915 )
 frames = SubResource( 1 )
 animation = "Flicker"
-frame = 3
+frame = 5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
