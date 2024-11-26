@@ -13,6 +13,7 @@ var hurt = 0
 var double_tap = false
 var cours = false
 var fonce_roule = "Roule"
+var direction = 1 
 
 const LASER = preload("res://Scene/Laser.tscn")
 
@@ -86,12 +87,16 @@ func _physics_process(delta):
 
 func Fire():
 	if Input.is_action_just_pressed("fire"):
-		var direction = -1 if $Sprite.flip_h else 1
+		if $Sprite.flip_h == true:
+			direction = -1
+		else :
+			direction = 1
 		var f = LASER.instance()
 		f.direction = direction
 		get_parent().add_child(f)
-		f.position.y = position.y
-		f.position.x = position.x + 80 * direction
+		f.D_ou_G(direction)
+		f.position.y = position.y + 5
+		f.position.x = position.x + 52 * direction
 
 func move_and_fall():
 	Velocity.y = Velocity.y + GRAVITY
