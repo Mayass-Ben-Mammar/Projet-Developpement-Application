@@ -3,7 +3,6 @@ extends Control
 var Nb_Coins = 0
 
 func _ready():
-	$NCoins.text = String(Nb_Coins)
 	Load_hearts()
 	Global.hud = self
 
@@ -14,6 +13,6 @@ func _on_CoinCollected():
 		get_tree().change_scene("res://Scene/Bravo.tscn")
 
 func Load_hearts():
-	$coeurplein.rect_size.x = Global.lives * 64
+	$Vie.rect_size.x = Global.lives
 
 
