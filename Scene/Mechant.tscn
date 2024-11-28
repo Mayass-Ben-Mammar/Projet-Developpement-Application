@@ -5,14 +5,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Death",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), null ],
 "loop": true,
 "name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Death",
 "speed": 5.0
 } ]
 
@@ -20,7 +20,7 @@ animations = [ {
 extents = Vector2( 32, 0.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 31, 1.5 )
+extents = Vector2( 31, 2 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 35, 31 )
@@ -32,6 +32,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Walk"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -48,7 +49,7 @@ position = Vector2( 0, -42 )
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tete"]
-position = Vector2( 0, 9.5 )
+position = Vector2( 0, 9 )
 shape = SubResource( 3 )
 
 [node name="Cotes" type="Area2D" parent="."]

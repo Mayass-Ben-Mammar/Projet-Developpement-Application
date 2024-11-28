@@ -27,7 +27,7 @@ func _physics_process(delta):
 
 
 func _on_Tete_body_entered(body):
-	if body == PhysicsBody2D:
+	if body.name == "Test Perso":
 		$AnimatedSprite.play("Death")
 		speed = 0
 		set_collision_layer_bit(4, false)
