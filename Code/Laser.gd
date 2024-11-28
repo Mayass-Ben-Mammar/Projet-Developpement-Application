@@ -11,6 +11,8 @@ func _ready():
 func _physics_process(delta):
 	if is_on_wall():
 		queue_free()
+	$AnimatedSprite.play("Projectile")
+	$AnimatedSprite.stop()
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
