@@ -120,7 +120,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 2/texture = ExtResource( 10 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 64, 32 )
+2/region = Rect2( 0, 0, 32, 32 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -204,7 +204,7 @@ tile_data = PoolIntArray( 393264, 0, 0, 393266, 0, 0, 524336, 0, 0, 524338, 0, 0
 tile_set = SubResource( 73 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 393264, 1, 0, 393265, 2, 0, 393266, 2, 0, 458800, -2147483646, 0, 589868, 1, 0, 589869, 2, 0, 589870, 2, 0, 589872, 0, 0, 655400, 2, 0, 655402, 2, 0, 655404, 0, 0 )
+tile_data = PoolIntArray( 393264, 1, 0, 393265, 2, 0, 393266, 2, 0, 393267, 2, 0, 458800, -2147483646, 0, 524336, -2147483646, 0, 589868, 1, 0, 589869, 2, 0, 589870, 2, 0, 589871, 2, 0, 589872, 0, 0, 655400, 2, 0, 655401, 2, 0, 655402, 2, 0, 655403, 2, 0, 655404, 0, 0 )
 
 [node name="Fall zone" type="Area2D" parent="."]
 collision_layer = 4
