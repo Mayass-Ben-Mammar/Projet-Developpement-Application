@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Arbres/Details_Fort.tres" type="TileSet" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Assets/TileSet_Grotte/Coin2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/TileSet_Grotte/Contour.png" type="Texture" id=6]
 [ext_resource path="res://Assets/TileSet_Grotte/Coin1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/TileSet_Ville/Coin1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/TileSet_Ville/Coin2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/TileSet_Ville/Contour.png" type="Texture" id=10]
+[ext_resource path="res://Assets/TileSet_Ville/Brique.png" type="Texture" id=11]
 [ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Code/Porte vers 0.gd" type="Script" id=15]
@@ -44,6 +48,76 @@
 1/z_index = 0
 2/name = "Contour.png 2"
 2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=71]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=72]
+0/name = "Brique.png 0"
+0/texture = ExtResource( 11 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 71 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 71 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=73]
+0/name = "Coin1.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Coin2.png 1"
+1/texture = ExtResource( 9 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Contour.png 2"
+2/texture = ExtResource( 10 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 64, 32 )
@@ -117,6 +191,20 @@ collision_layer = 2
 collision_mask = 17
 format = 1
 tile_data = PoolIntArray( 655394, 1, 0, 655396, 2, 0, 655398, 2, 0, 786462, 2, 0, 786464, 2, 0, 786466, 0, 0 )
+
+[node name="TileMap_Ville" type="TileMap" parent="."]
+tile_set = SubResource( 72 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+tile_data = PoolIntArray( 393264, 0, 0, 393266, 0, 0, 524336, 0, 0, 524338, 0, 0, 589868, 0, 0, 589870, 0, 0, 655400, 0, 0, 655402, 0, 0, 655408, 0, 0, 655410, 0, 0, 720940, 0, 0, 720942, 0, 0, 786472, 0, 0, 786474, 0, 0, 786480, 0, 0, 786482, 0, 0, 852012, 0, 0, 852014, 0, 0, 917544, 0, 0, 917546, 0, 0, 917552, 0, 0, 917554, 0, 0, 983084, 0, 0, 983086, 0, 0, 1048616, 0, 0, 1048618, 0, 0, 1048624, 0, 0, 1048626, 0, 0 )
+
+[node name="Details" type="TileMap" parent="TileMap_Ville"]
+tile_set = SubResource( 73 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 393264, 1, 0, 393265, 2, 0, 393266, 2, 0, 458800, -2147483646, 0, 589868, 1, 0, 589869, 2, 0, 589870, 2, 0, 589872, 0, 0, 655400, 2, 0, 655402, 2, 0, 655404, 0, 0 )
 
 [node name="Fall zone" type="Area2D" parent="."]
 collision_layer = 4
