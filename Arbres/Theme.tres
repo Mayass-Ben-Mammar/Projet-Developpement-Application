@@ -13,17 +13,17 @@ bg_color = Color( 0, 0, 0, 1 )
 [sub_resource type="StyleBoxFlat" id=4]
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0, 0.305882, 0.0745098, 1 )
+bg_color = Color( 0.207843, 0.529412, 0.341176, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0.305882, 0.0745098, 1 )
+bg_color = Color( 0.207843, 0.529412, 0.341176, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 
 [resource]
 Button/colors/font_color = Color( 1, 1, 1, 1 )
 Button/colors/font_color_disabled = Color( 0.239216, 0.239216, 0.239216, 1 )
-Button/colors/font_color_focus = Color( 0.027451, 0.396078, 0.0666667, 1 )
+Button/colors/font_color_focus = Color( 0.207843, 0.529412, 0.341176, 1 )
 Button/colors/font_color_hover = Color( 0, 0.976471, 1, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
