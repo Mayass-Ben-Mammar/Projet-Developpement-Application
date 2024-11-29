@@ -2,10 +2,10 @@
 Projet à réaliser en groupe pour le module "Developpement Application" chez L'INSA HDF / UPHF
 
 # A FAIRE - ORDRE DE PRIORITE : 
-Laser (Timer, when just pressed, etc) <br>
-Monde - Niveaux (TileSet(rajouter nouvelle variante) + bg) <br/>
+Monde - Niveaux (Fond + structure niveau) <br/>
+Musique <br/>
 Menu/Pause/etc (Faire design/dessin) <br>
 Animation Joueur - Ennemies <br/>
+Dictionnaire des niveau <br>
 Fichier sauvegarde <br>
-Musique <br/>
 Optimisation du code <br/>
