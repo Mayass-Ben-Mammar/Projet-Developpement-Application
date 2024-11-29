@@ -6,6 +6,7 @@ var direction = 1
 
 func _ready():
 	velocity.x = SPEED * direction
+	$AudioStreamPlayer.play()
 
 
 func _physics_process(delta):

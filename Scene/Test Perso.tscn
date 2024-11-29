@@ -17,7 +17,7 @@ __meta__ = {
 position = Vector2( 3, 6 )
 frames = ExtResource( 1 )
 animation = "Clignement"
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,6 +42,8 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.3
 editor_draw_limits = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Clignement" to="." method="_on_Clignement_timeout"]

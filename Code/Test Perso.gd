@@ -3,6 +3,10 @@ extends KinematicBody2D
 enum States{AIR = 1, FLOOR, WALL}
 var state = States.FLOOR
 
+var roule_son = load("res://Assets/Son/260778__squirmtheverm__rolling-ball-loop.wav")
+var fonce_son = load("res://Assets/Son/fonce.wav")
+var saut_son = load("res://Assets/Son/saut.wav")
+
 var SPEED = 200
 const RUNSPEED = 500
 const GRAVITY = 30
@@ -44,9 +48,11 @@ func _physics_process(delta):
 			if cours == true:
 				SPEED = RUNSPEED
 				fonce_roule = "Fonce"
+				$AudioStreamPlayer.stream = fonce_son
 			else:
 				SPEED = 200
 				fonce_roule = "Roule"
+				$AudioStreamPlayer.stream = roule_son
 			if Input.is_action_pressed("right"):
 				if double_tap == true:
 					cours = true
@@ -56,6 +62,7 @@ func _physics_process(delta):
 				Velocity.x = SPEED
 				$Sprite.play(fonce_roule)
 				$Sprite.flip_h = false
+				$AudioStreamPlayer.play()
 			elif Input.is_action_pressed("left"):
 				if double_tap == true:
 					cours = true
@@ -65,10 +72,13 @@ func _physics_process(delta):
 				Velocity.x = -SPEED
 				$Sprite.play(fonce_roule)
 				$Sprite.flip_h = true
+				$AudioStreamPlayer.play()
 			else:
 				Velocity.x = lerp(Velocity.x, 0, 0.1)
 				$Sprite.play("Inactif")
 			if Input.is_action_just_pressed("jump"):
+				$AudioStreamPlayer.stream = saut_son
+				$AudioStreamPlayer.play()
 				Velocity.y = JFORCE
 				state = States.AIR
 			if Input.is_action_just_pressed("down"):
