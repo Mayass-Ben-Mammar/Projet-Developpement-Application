@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/15475__elonen__rolling-office-chair.wav-35a9df7e094203661a2e65ea3c58bcda.sample"
+
+[deps]
+
+source_file="res://Assets/Son/15475__elonen__rolling-office-chair.wav"
+dest_files=[ "res://.import/15475__elonen__rolling-office-chair.wav-35a9df7e094203661a2e65ea3c58bcda.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

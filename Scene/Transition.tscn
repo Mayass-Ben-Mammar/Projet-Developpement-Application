@@ -6,7 +6,7 @@
 resource_name = "Fade"
 length = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("Fade:color")
+tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 resource_name = "RESET"
 length = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("Fade:color")
+tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,7 +37,10 @@ tracks/0/keys = {
 [node name="Transition" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Fade" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
