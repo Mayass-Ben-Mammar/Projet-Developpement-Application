@@ -17,6 +17,8 @@ func _physics_process(delta):
 			elif Input.is_action_just_pressed("up"):
 				monde_actuelle = 5
 				$CanvasLayer/Fleche1.hide()
+			if Input.is_action_just_pressed("jump"):
+				Transition.Change_Niveau("res://Scene/Monde 1/HUB1.tscn")
 		2:
 			$CanvasLayer/Fleche2.show()
 			if Input.is_action_just_pressed("right"):
