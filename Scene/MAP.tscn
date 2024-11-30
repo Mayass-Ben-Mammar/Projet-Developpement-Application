@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Background/Labo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Background/MAP.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Background/FlecheS4.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Background/FlecheS5.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Background/Fleche4.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Background/Nuage.png" type="Texture" id=18]
 
 [sub_resource type="AnimatedTexture" id=4]
 frames = 2
@@ -48,6 +49,74 @@ frame_0/texture = ExtResource( 14 )
 frame_1/texture = ExtResource( 16 )
 frame_1/delay_sec = 0.0
 
+[sub_resource type="Animation" id=7]
+resource_name = "MontrerMonde1"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Nuage1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Nuage1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 480, 273 ), Vector2( 480, 100 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Nuage1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Nuage1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Nuage1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 480, 273 ) ]
+}
+
 [node name="MAP" type="Node"]
 script = ExtResource( 5 )
 
@@ -68,6 +137,10 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = SubResource( 4 )
+
+[node name="Nuage1" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 480, 273 )
+texture = ExtResource( 18 )
 
 [node name="Foret" type="TextureRect" parent="CanvasLayer"]
 visible = false
@@ -116,3 +189,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = SubResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+anims/MontrerMonde1 = SubResource( 7 )
+anims/RESET = SubResource( 8 )
