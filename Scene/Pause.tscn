@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Code/Pause.gd" type="Script" id=1]
+[ext_resource path="res://Arbres/Theme.tres" type="Theme" id=2]
 
 [node name="Pause" type="Control"]
 pause_mode = 2
@@ -9,37 +10,37 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.168627, 0.027451, 0.27451, 0.196078 )
 
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
-margin_left = 443.0
-margin_top = 241.0
-margin_right = 517.0
-margin_bottom = 303.0
-
-[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
-margin_right = 74.0
-margin_bottom = 14.0
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 377.0
+margin_top = 101.0
+margin_right = 571.0
+margin_bottom = 158.0
+theme = ExtResource( 2 )
 text = "Pause"
 align = 1
 
-[node name="Continuer" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 74.0
-margin_bottom = 38.0
+[node name="Continuer" type="Button" parent="ColorRect"]
+pause_mode = 2
+margin_left = 378.0
+margin_top = 283.0
+margin_right = 564.0
+margin_bottom = 333.0
+theme = ExtResource( 2 )
 text = "Continuer"
 
-[node name="Quitter" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
-margin_top = 42.0
-margin_right = 74.0
-margin_bottom = 62.0
+[node name="Quitter" type="Button" parent="ColorRect"]
+pause_mode = 2
+margin_left = 380.0
+margin_top = 350.0
+margin_right = 566.0
+margin_bottom = 400.0
+theme = ExtResource( 2 )
 text = "Quitter"
 
-[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Continuer" to="." method="_on_Continuer_pressed"]
-[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Quitter" to="." method="_on_Quitter_pressed"]
+[connection signal="pressed" from="ColorRect/Continuer" to="." method="_on_Continuer_pressed"]
+[connection signal="pressed" from="ColorRect/Quitter" to="." method="_on_Quitter_pressed"]

@@ -215,10 +215,10 @@ shape = SubResource( 68 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
+[node name="HUD" parent="GUI" instance=ExtResource( 13 )]
+
 [node name="Pause" parent="GUI" instance=ExtResource( 14 )]
 visible = false
-
-[node name="HUD" parent="GUI" instance=ExtResource( 13 )]
 
 [node name="Porte vers 0" type="Area2D" parent="."]
 script = ExtResource( 15 )
