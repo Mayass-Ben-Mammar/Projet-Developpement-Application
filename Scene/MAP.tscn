@@ -1,15 +1,51 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Background/Labo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Background/MAP.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Background/Fleche1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Background/FlecheS1.png" type="Texture" id=4]
 [ext_resource path="res://Code/MAP.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Background/Foret.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Background/Fleche2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Background/FlecheS2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Background/FlecheS3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Background/Fleche3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Background/Grotte.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Background/Ville.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Background/Cabane.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Background/Fleche5.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Background/FlecheS4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Background/FlecheS5.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Background/Fleche4.png" type="Texture" id=17]
 
-[sub_resource type="AnimatedTexture" id=1]
+[sub_resource type="AnimatedTexture" id=4]
 frames = 2
 frame_0/texture = ExtResource( 3 )
 frame_1/texture = ExtResource( 4 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 2
+frame_0/texture = ExtResource( 7 )
+frame_1/texture = ExtResource( 8 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=3]
+frames = 2
+frame_0/texture = ExtResource( 10 )
+frame_1/texture = ExtResource( 9 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=5]
+frames = 2
+frame_0/texture = ExtResource( 17 )
+frame_1/texture = ExtResource( 15 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=6]
+frames = 2
+frame_0/texture = ExtResource( 14 )
+frame_1/texture = ExtResource( 16 )
 frame_1/delay_sec = 0.0
 
 [node name="MAP" type="Node"]
@@ -31,4 +67,48 @@ texture = ExtResource( 1 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 1 )
+texture = SubResource( 4 )
+
+[node name="Foret" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+
+[node name="Fleche2" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+
+[node name="Grotte" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+
+[node name="Fleche3" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 3 )
+
+[node name="Ville" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 12 )
+
+[node name="Fleche4" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 5 )
+
+[node name="Cabane" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+
+[node name="Fleche5" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 6 )

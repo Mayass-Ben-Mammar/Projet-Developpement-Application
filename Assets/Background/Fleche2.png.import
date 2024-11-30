@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BackgroundT.png-8311105529d46bb84eefe4076d898899.stex"
+path="res://.import/Fleche2.png-e8b5070c7def021a1907f927924fecf9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/BackgroundT.png"
-dest_files=[ "res://.import/BackgroundT.png-8311105529d46bb84eefe4076d898899.stex" ]
+source_file="res://Assets/Background/Fleche2.png"
+dest_files=[ "res://.import/Fleche2.png-e8b5070c7def021a1907f927924fecf9.stex" ]
 
 [params]
 

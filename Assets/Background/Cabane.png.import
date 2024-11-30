@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BackgroundT.png-8311105529d46bb84eefe4076d898899.stex"
+path="res://.import/Cabane.png-83d9e6a8521889e104a16101dc80675d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/BackgroundT.png"
-dest_files=[ "res://.import/BackgroundT.png-8311105529d46bb84eefe4076d898899.stex" ]
+source_file="res://Assets/Background/Cabane.png"
+dest_files=[ "res://.import/Cabane.png-83d9e6a8521889e104a16101dc80675d.stex" ]
 
 [params]
 
