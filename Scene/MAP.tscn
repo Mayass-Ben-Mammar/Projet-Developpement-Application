@@ -70,6 +70,7 @@ anchor_bottom = 1.0
 texture = SubResource( 4 )
 
 [node name="Foret" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 6 )
@@ -81,6 +82,7 @@ anchor_bottom = 1.0
 texture = SubResource( 2 )
 
 [node name="Grotte" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 11 )
@@ -92,6 +94,7 @@ anchor_bottom = 1.0
 texture = SubResource( 3 )
 
 [node name="Ville" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 12 )
@@ -103,6 +106,7 @@ anchor_bottom = 1.0
 texture = SubResource( 5 )
 
 [node name="Cabane" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 13 )
