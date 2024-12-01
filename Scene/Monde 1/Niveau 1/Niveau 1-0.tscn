@@ -188,5 +188,6 @@ shape = SubResource( 1 )
 [connection signal="body_entered" from="Tutoriel/Fonce2" to="Tutoriel" method="_on_Fonce2_body_entered"]
 [connection signal="body_entered" from="N1VH" to="N1VH" method="_on_N1VH_body_entered"]
 [connection signal="body_exited" from="N1VH" to="N1VH" method="_on_N1VH_body_exited"]
+[connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]
 [connection signal="FleurRecuperer" from="Fleur" to="GUI/HUD" method="_on_Fleur_FleurRecuperer"]
 [connection signal="body_entered" from="Fall zone" to="Test Perso" method="_on_Fall_zone_body_entered"]
