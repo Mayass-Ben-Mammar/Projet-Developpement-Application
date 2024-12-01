@@ -1,10 +1,13 @@
 extends Node
 
+onready var save = Global.J_donnees
+
 var monde_actuelle = 1
-var premiere_fois = Global.premiere_fois
+#var premiere_fois = Global.premiere_fois
 
 func _ready():
-	if premiere_fois == true:
+	print(save)
+	if save.premiere_fois == true:
 		premiereFois()
 	else:
 		$CanvasLayer/Nuage1.hide()
@@ -19,10 +22,10 @@ func _physics_process(delta):
 			elif Input.is_action_just_pressed("up"):
 				monde_actuelle = 5
 				$CanvasLayer/Fleche1.hide()
-			if Input.is_action_just_pressed("jump") and premiere_fois == false:
+			if Input.is_action_just_pressed("jump") and save.premiere_fois == false:
 				Transition.Change_Niveau("res://Scene/Monde 1/HUB1.tscn")
-			elif Input.is_action_just_pressed("jump") and premiere_fois == true:
-				Global.premiere_fois = false
+			elif Input.is_action_just_pressed("jump") and save.premiere_fois == true:
+				save.premiere_fois = false
 				Transition.Change_Niveau("res://Scene/Monde 1/Niveau 1/Niveau 1-0.tscn")
 		2:
 			$CanvasLayer/Fleche2.show()
