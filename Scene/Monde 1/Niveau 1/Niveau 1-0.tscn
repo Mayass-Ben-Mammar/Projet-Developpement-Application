@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Code/Monde 1/Niveau 1/Niveau 1-0.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Portes/Porte_Labo.png" type="Texture" id=7]
 [ext_resource path="res://Code/Monde 1/Niveau 1/N1VH.gd" type="Script" id=8]
+[ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=6]
 0/name = "Porte_Labo.png 0"
@@ -161,6 +163,13 @@ shape = SubResource( 7 )
 
 [node name="Test Perso" parent="." instance=ExtResource( 3 )]
 position = Vector2( 100, 398 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource( 10 )]
+
+[node name="Pause" parent="GUI" instance=ExtResource( 9 )]
+visible = false
 
 [node name="Fall zone" type="Area2D" parent="."]
 collision_layer = 4
