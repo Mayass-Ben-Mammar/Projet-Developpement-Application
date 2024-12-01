@@ -18,4 +18,5 @@ func _on_Continuer_pressed():
 
 
 func _on_Quitter_pressed():
-	get_tree().quit()
+	self.est_en_pause = false
+	Transition.Change_Niveau("res://Scene/MAP.tscn")

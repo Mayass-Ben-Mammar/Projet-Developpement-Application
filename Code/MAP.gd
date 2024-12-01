@@ -1,13 +1,15 @@
 extends Node
 
 var monde_actuelle = 1
+var premiere_fois = Global.premiere_fois
 
 func _ready():
-	premiereFois()
-
+	if premiere_fois == true:
+		premiereFois()
+	else:
+		$CanvasLayer/Nuage1.hide()
 
 func _physics_process(delta):
-	print(monde_actuelle)
 	match monde_actuelle:
 		1:
 			$CanvasLayer/Fleche1.show()
@@ -17,8 +19,11 @@ func _physics_process(delta):
 			elif Input.is_action_just_pressed("up"):
 				monde_actuelle = 5
 				$CanvasLayer/Fleche1.hide()
-			if Input.is_action_just_pressed("jump"):
+			if Input.is_action_just_pressed("jump") and premiere_fois == false:
 				Transition.Change_Niveau("res://Scene/Monde 1/HUB1.tscn")
+			elif Input.is_action_just_pressed("jump") and premiere_fois == true:
+				Global.premiere_fois = false
+				Transition.Change_Niveau("res://Scene/Monde 1/Niveau 1/Niveau 1-0.tscn")
 		2:
 			$CanvasLayer/Fleche2.show()
 			if Input.is_action_just_pressed("right"):

@@ -4,7 +4,7 @@
 [ext_resource path="res://Code/Test Perso.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 36, 40 )
+extents = Vector2( 37.5, 40 )
 
 [node name="Test Perso" type="KinematicBody2D"]
 collision_mask = 6
@@ -17,11 +17,10 @@ __meta__ = {
 position = Vector2( 3, 6 )
 frames = ExtResource( 1 )
 animation = "Clignement"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, 9 )
+position = Vector2( 2.5, 9 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
