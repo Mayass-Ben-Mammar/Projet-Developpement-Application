@@ -3,9 +3,8 @@ Projet à réaliser en groupe pour le module "Developpement Application" chez L'
 
 # A FAIRE - ORDRE DE PRIORITE : 
 Monde - Niveaux (Fond + structure niveau) <br/>
-Musique <br/>
-Menu/Pause/etc (Faire design/dessin) <br>
-Animation Joueur - Ennemies <br/>
 Dictionnaire des niveau <br>
-Fichier sauvegarde <br>
+Menu/Pause/etc (Faire design/dessin) <br>
+Animation Ennemies - Mini boss - Boss <br/>
+Musique <br/>
 Optimisation du code <br/>
