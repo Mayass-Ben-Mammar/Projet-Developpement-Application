@@ -5,7 +5,6 @@ onready var save = Global.J_donnees
 var monde_actuelle = 1
 
 func _ready():
-	print(save)
 	if save.premiere_fois == true:
 		premiereFois()
 	else:

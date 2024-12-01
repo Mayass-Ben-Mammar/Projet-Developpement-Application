@@ -9,9 +9,7 @@ var hud
 #var premiere_fois = true
 
 func _ready():
-	print(J_donnees)
 	charger()
-	print(J_donnees)
 
 
 func lose_life(degat):
@@ -34,7 +32,6 @@ func charger():
 		}
 		sauvegarder()
 	else:
-		print("trouver")
 		fichier.open(SAVE_FILE, File.READ)
 		J_donnees = fichier.get_var()
 		fichier.close()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Code/Monde 1/Niveau 1/N1VH.gd" type="Script" id=8]
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scene/Fleur.tscn" type="PackedScene" id=11]
 
 [sub_resource type="TileSet" id=6]
 0/name = "Porte_Labo.png 0"
@@ -161,6 +162,9 @@ script = ExtResource( 8 )
 position = Vector2( 2736, 279.75 )
 shape = SubResource( 7 )
 
+[node name="Fleur" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2571, 244 )
+
 [node name="Test Perso" parent="." instance=ExtResource( 3 )]
 position = Vector2( 100, 398 )
 
@@ -184,4 +188,5 @@ shape = SubResource( 1 )
 [connection signal="body_entered" from="Tutoriel/Fonce2" to="Tutoriel" method="_on_Fonce2_body_entered"]
 [connection signal="body_entered" from="N1VH" to="N1VH" method="_on_N1VH_body_entered"]
 [connection signal="body_exited" from="N1VH" to="N1VH" method="_on_N1VH_body_exited"]
+[connection signal="FleurRecuperer" from="Fleur" to="GUI/HUD" method="_on_Fleur_FleurRecuperer"]
 [connection signal="body_entered" from="Fall zone" to="Test Perso" method="_on_Fall_zone_body_entered"]
