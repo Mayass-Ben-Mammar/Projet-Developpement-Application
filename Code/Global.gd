@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_FILE = "user://save_file.save"
+const SAVE_FILE = "user://sauvegarde.save"
 var J_donnees = {}
 
 var max_lives = 200
@@ -32,7 +32,9 @@ func charger():
 		J_donnees = {
 			"premiere_fois": true
 		}
+		sauvegarder()
 	else:
+		print("trouver")
 		fichier.open(SAVE_FILE, File.READ)
 		J_donnees = fichier.get_var()
 		fichier.close()

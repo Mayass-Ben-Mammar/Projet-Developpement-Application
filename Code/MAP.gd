@@ -3,7 +3,6 @@ extends Node
 onready var save = Global.J_donnees
 
 var monde_actuelle = 1
-#var premiere_fois = Global.premiere_fois
 
 func _ready():
 	print(save)
@@ -26,6 +25,7 @@ func _physics_process(delta):
 				Transition.Change_Niveau("res://Scene/Monde 1/HUB1.tscn")
 			elif Input.is_action_just_pressed("jump") and save.premiere_fois == true:
 				save.premiere_fois = false
+				Global.sauvegarder()
 				Transition.Change_Niveau("res://Scene/Monde 1/Niveau 1/Niveau 1-0.tscn")
 		2:
 			$CanvasLayer/Fleche2.show()
