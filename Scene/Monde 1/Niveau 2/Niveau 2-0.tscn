@@ -1,0 +1,174 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Test Perso.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/TileSet_Labo/Grille.png" type="Texture" id=4]
+[ext_resource path="res://Code/Monde 1/Niveau 2/Niveau 2-0.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Portes/Porte_Labo.png" type="Texture" id=7]
+[ext_resource path="res://Code/Monde 1/Niveau 1/N1VH.gd" type="Script" id=8]
+[ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scene/Fleur.tscn" type="PackedScene" id=11]
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=12]
+0/name = "Grille.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 8 )
+0/shape_one_way = true
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=6]
+0/name = "Porte_Labo.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 47, 223 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 40, 39.75 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1425, 69.25 )
+
+[node name="Niveau 2" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Fond Loin" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1410, 816 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Fond Loin"]
+position = Vector2( 2, -290 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="TileMap_Labo" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+tile_data = PoolIntArray( -131072, 6, 0, -131071, 6, 0, -130982, 1, 0, -65536, 6, 0, -65535, 6, 0, -65446, 1, 0, 0, -1610612735, 65537, 1, -536870911, 1, 90, 1, 0, 65536, -1610612735, 65537, 65537, -536870911, 1, 65626, 1, 0, 131072, 1610612738, 65537, 131073, -536870910, 1, 131162, 1, 0, 196608, -1610612734, 65537, 196609, -1610612734, 1, 196698, 1, 0, 262144, 536870919, 65537, 262145, -536870905, 1, 262234, 1, 0, 327680, 536870919, 65537, 327681, -536870905, 1, 327704, 12, 0, 327707, 12, 0, 327770, 1, 0, 393216, -1610612736, 65537, 393217, -536870912, 1, 393306, 1, 0, 458752, -1610612736, 65537, 458753, -536870912, 1, 458842, 1, 0, 524288, -1610612732, 65537, 524289, -1610612732, 1, 524378, 1, 0, 589824, -1610612732, 65537, 589825, -1610612732, 1, 589914, 1, 0, 655360, -1610612736, 65537, 655361, -1610612736, 1, 655450, 1, 0, 720896, 0, 65537, 720897, -1610612736, 1, 720986, 1, 0, 786432, -536870904, 65537, 786433, -536870904, 1, 786522, 1, 0, 851968, 536870920, 65537, 851969, -1610612728, 1, 852058, 1, 0, 917504, -1610612735, 65537, 917505, -1610612735, 65536, 917506, 1, 1, 917507, 536870919, 1, 917508, 1, 1, 917509, 1, 1, 917510, 536870919, 1, 917511, 1, 1, 917512, 1, 1, 917513, 1, 1, 917514, 536870919, 1, 917515, 536870919, 1, 917516, 536870919, 1, 917517, 1, 1, 917518, 1, 1, 917519, 1, 1, 917526, 7, 0, 917527, 7, 0, 917528, 1, 65536, 917529, 1, 65536, 917530, 1, 65536, 917531, 7, 0, 917536, 1, 0, 917537, 1, 0, 917538, 7, 0, 917539, 7, 0, 917540, 1, 0, 917541, 1, 0, 917542, 7, 0, 917543, 7, 0, 917544, 7, 0, 917545, 7, 0, 917554, 1, 0, 917555, 1, 0, 917556, 1, 0, 917557, 7, 0, 917558, 7, 0, 917559, 7, 0, 917560, 7, 0, 917561, 7, 0, 917562, 1, 0, 917563, 1, 0, 917564, 1, 0, 917565, 1, 0, 917566, 1, 0, 917567, 1, 0, 917568, 7, 0, 917569, 7, 0, 917570, 7, 0, 917571, 1, 0, 917572, 1, 0, 917573, 1, 0, 917574, 7, 0, 917575, 7, 0, 917576, 1, 0, 917577, 7, 0, 917578, 7, 0, 917579, 1, 0, 917580, 7, 0, 917581, 1, 0, 917582, 1, 0, 917583, 1, 0, 917584, 7, 0, 917585, 7, 0, 917586, 7, 0, 917587, 1, 0, 917588, 1, 0, 917589, 1, 0, 917590, 7, 0, 917591, 7, 0, 917592, 7, 0, 917593, 7, 0, 917594, 1, 0, 983040, 1610612738, 65537, 983041, -1073741822, 65537, 983042, -2147483642, 65537, 983043, -2147483642, 65537, 983044, 1610612738, 65537, 983045, -1073741822, 65537, 983046, 1, 65537, 983047, 1, 65537, 983048, -2147483641, 65537, 983049, -2147483641, 65537, 983050, 0, 65537, 983051, 0, 65537, 983052, 1610612738, 65537, 983053, -1073741822, 65537, 983054, 1610612738, 65537, 983055, -1073741822, 65537, 983062, 8, 0, 983063, 8, 1, 983064, 9, 0, 983065, 9, 0, 983066, 1, 0, 983067, 1, 65536, 983072, 5, 0, 983073, 5, 1, 983074, 8, 0, 983075, 8, 1, 983076, 3, 0, 983077, 3, 0, 983078, 6, 0, 983079, 6, 0, 983080, 4, 0, 983081, 4, 0, 983090, 6, 0, 983091, 6, 0, 983092, 7, 0, 983093, 7, 0, 983094, 2, 0, 983095, 2, 1, 983096, 8, 0, 983097, 8, 1, 983098, 3, 0, 983099, 3, 0, 983100, 5, 0, 983101, 5, 1, 983102, 9, 0, 983103, 9, 0, 983104, 7, 0, 983105, 7, 0, 983106, 9, 0, 983107, 9, 0, 983108, 0, 0, 983109, 0, 0, 983110, 5, 0, 983111, 5, 1, 983112, 1, 0, 983113, 1, 0, 983114, 9, 0, 983115, 9, 0, 983116, 5, 65536, 983117, 5, 65537, 983118, 7, 0, 983119, 7, 0, 983120, 5, 0, 983121, 5, 1, 983122, 1, 0, 983123, 1, 0, 983124, 11, 65536, 983125, 11, 65537, 983126, 0, 0, 983127, 0, 0, 983128, 1, 0, 983129, 1, 0, 983130, 1, 0, 1048576, -1610612734, 65537, 1048577, 2, 65537, 1048578, -2147483642, 65537, 1048579, -2147483642, 65537, 1048580, -1610612734, 65537, 1048581, 2, 65537, 1048582, 1, 65537, 1048583, 1, 65537, 1048584, -2147483641, 65537, 1048585, -2147483641, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, -1610612734, 65537, 1048589, 2, 65537, 1048590, -1610612734, 65537, 1048591, 2, 65537, 1048598, 8, 65536, 1048599, 8, 65537, 1048600, 9, 0, 1048601, 9, 0, 1048602, 1, 0, 1048603, 1, 65536, 1048608, 5, 65536, 1048609, 5, 65537, 1048610, 8, 65536, 1048611, 8, 65537, 1048612, 3, 0, 1048613, 3, 0, 1048614, 6, 0, 1048615, 6, 0, 1048616, 4, 65536, 1048617, 4, 65536, 1048626, 6, 0, 1048627, 6, 0, 1048628, 7, 0, 1048629, 7, 0, 1048630, 2, 65536, 1048631, 2, 65537, 1048632, 8, 65536, 1048633, 8, 65537, 1048634, 3, 0, 1048635, 3, 0, 1048636, 5, 65536, 1048637, 5, 65537, 1048638, 9, 0, 1048639, 9, 0, 1048640, 7, 0, 1048641, 7, 0, 1048642, 9, 0, 1048643, 9, 0, 1048644, 0, 0, 1048645, 0, 0, 1048646, 5, 65536, 1048647, 5, 65537, 1048648, 1, 0, 1048649, 1, 0, 1048650, 9, 0, 1048651, 9, 0, 1048652, 1610612741, 1, 1048653, 1610612741, 0, 1048654, 7, 0, 1048655, 7, 0, 1048656, 5, 65536, 1048657, 5, 65537, 1048658, 1, 0, 1048659, 1, 0, 1048660, 1610612747, 1, 1048661, 1610612747, 0, 1048662, 0, 0, 1048663, 0, 0, 1048664, 1, 0, 1048665, 1, 0, 1048666, 1, 0 )
+
+[node name="OW" type="TileMap" parent="TileMap_Labo"]
+tile_set = SubResource( 12 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+
+[node name="Portes" type="TileMap" parent="."]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 458836, 0, 0 )
+
+[node name="Spawn mechant" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Spawn mechant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn mechant/Area2D"]
+position = Vector2( 1648, 225 )
+shape = SubResource( 13 )
+
+[node name="N1VH" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="N1VH"]
+position = Vector2( 2736, 279.75 )
+shape = SubResource( 7 )
+
+[node name="Fleur" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2571, 244 )
+
+[node name="Test Perso" parent="." instance=ExtResource( 3 )]
+position = Vector2( 100, 398 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource( 10 )]
+
+[node name="Pause" parent="GUI" instance=ExtResource( 9 )]
+visible = false
+
+[node name="Fall zone" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall zone"]
+position = Vector2( 1426, 613.75 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="N1VH" to="N1VH" method="_on_N1VH_body_entered"]
+[connection signal="body_exited" from="N1VH" to="N1VH" method="_on_N1VH_body_exited"]
+[connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]
+[connection signal="FleurRecuperer" from="Fleur" to="GUI/HUD" method="_on_Fleur_FleurRecuperer"]
+[connection signal="body_entered" from="Fall zone" to="Test Perso" method="_on_Fall_zone_body_entered"]

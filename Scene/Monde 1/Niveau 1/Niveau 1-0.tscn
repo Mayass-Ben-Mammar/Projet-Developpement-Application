@@ -183,9 +183,13 @@ position = Vector2( 1426, 613.75 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="Tutoriel/Mouvement2" to="Tutoriel" method="_on_Mouvement2_body_entered"]
+[connection signal="body_exited" from="Tutoriel/Mouvement2" to="Tutoriel" method="_on_Mouvement2_body_exited"]
 [connection signal="body_entered" from="Tutoriel/Saut2" to="Tutoriel" method="_on_Saut2_body_entered"]
+[connection signal="body_exited" from="Tutoriel/Saut2" to="Tutoriel" method="_on_Saut2_body_exited"]
 [connection signal="body_entered" from="Tutoriel/Laser2" to="Tutoriel" method="_on_Laser2_body_entered"]
+[connection signal="body_exited" from="Tutoriel/Laser2" to="Tutoriel" method="_on_Laser2_body_exited"]
 [connection signal="body_entered" from="Tutoriel/Fonce2" to="Tutoriel" method="_on_Fonce2_body_entered"]
+[connection signal="body_exited" from="Tutoriel/Fonce2" to="Tutoriel" method="_on_Fonce2_body_exited"]
 [connection signal="body_entered" from="N1VH" to="N1VH" method="_on_N1VH_body_entered"]
 [connection signal="body_exited" from="N1VH" to="N1VH" method="_on_N1VH_body_exited"]
 [connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]
