@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scene/Fleur.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Portes/Porte_Fin.png" type="Texture" id=12]
 
 [sub_resource type="TileSet" id=6]
 0/name = "Porte_Labo.png 0"
@@ -27,6 +28,20 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "Porte_Fin.png 1"
+1/texture = ExtResource( 12 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 96, 96 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 223, 76.5 )
@@ -73,7 +88,7 @@ tile_data = PoolIntArray( -131072, 6, 0, -131071, 6, 0, -130982, 1, 0, -65536, 6
 tile_set = SubResource( 6 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 458836, 0, 0 )
+tile_data = PoolIntArray( 458836, 1, 0 )
 
 [node name="Tutoriel" type="Control" parent="."]
 margin_right = 40.0

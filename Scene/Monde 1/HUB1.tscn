@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Code/Monde 1/1-1.gd" type="Script" id=7]
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Code/Monde 1/1-2.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Portes/Porte_Labo_F.png" type="Texture" id=10]
+[ext_resource path="res://Code/Monde 1/Portes.gd" type="Script" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Porte_Labo.png 0"
@@ -25,6 +27,20 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "Porte_Labo_F.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 96, 96 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 40.75, 40.5 )
@@ -158,7 +174,8 @@ tile_data = PoolIntArray( -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 262150, 0, 0, 262154, 0, 0, 262161, 0, 0, 262165, 0, 0, 720899, 0, 0, 720903, 0, 0, 720907, 0, 0, 720912, 0, 0, 720916, 0, 0, 720920, 0, 0 )
+tile_data = PoolIntArray( 262150, 1, 0, 262154, 1, 0, 262161, 1, 0, 262165, 1, 0, 720899, 0, 0, 720903, 1, 0, 720907, 1, 0, 720912, 1, 0, 720916, 1, 0, 720920, 1, 0 )
+script = ExtResource( 11 )
 
 [node name="Portes Area" type="Node2D" parent="."]
 
