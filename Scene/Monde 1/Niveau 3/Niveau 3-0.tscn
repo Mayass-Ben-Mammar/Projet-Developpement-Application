@@ -1,0 +1,203 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Portes/Porte_Labo.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Portes/Porte_Fin.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Test Perso.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Code/Monde 1/Niveau 3/Niveau 3-0.gd" type="Script" id=8]
+[ext_resource path="res://Assets/TileSet_Labo/Grille.png" type="Texture" id=9]
+[ext_resource path="res://Code/Monde 1/Niveau 3/N31.gd" type="Script" id=10]
+[ext_resource path="res://Code/Monde 1/Niveau 3/N32.gd" type="Script" id=11]
+[ext_resource path="res://Code/Monde 1/Niveau 3/N33.gd" type="Script" id=12]
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=12]
+0/name = "Grille.png 0"
+0/texture = ExtResource( 9 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 8 )
+0/shape_one_way = true
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=1]
+0/name = "Porte_Labo.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Porte_Fin.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 96, 96 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1425, 69.25 )
+
+[node name="Niveau 3" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Fond Loin" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1410, 816 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Fond Loin"]
+position = Vector2( 2, -290 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="TileMap_Labo" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+tile_data = PoolIntArray( -131072, 6, 0, -131071, 6, 0, -65536, 6, 0, -65535, 6, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 1, 0, -65507, 1, 0, -65506, 1, 0, -65505, 1, 0, -65504, 1, 0, -65503, 1, 0, -65502, 1, 0, -65501, 1, 0, -65500, 1, 0, -65499, 1, 0, -65498, 1, 0, -65497, 1, 0, 0, -1610612735, 65537, 1, -536870911, 1, 33, 1, 0, 39, 1, 0, 65536, -1610612735, 65537, 65537, -536870911, 1, 65569, 1, 0, 65575, 1, 0, 131072, 1610612738, 65537, 131073, -536870910, 1, 131105, 1, 0, 131111, 1, 0, 196608, -1610612734, 65537, 196609, -1610612734, 1, 196641, 7, 0, 196647, 1, 0, 262144, 536870919, 65537, 262145, -536870905, 1, 262177, 7, 0, 262183, 7, 0, 327680, 536870919, 65537, 327681, -536870905, 1, 327704, 12, 0, 327707, 12, 0, 327713, 1, 0, 327719, 7, 0, 393216, -1610612736, 65537, 393217, -536870912, 1, 393249, 1, 0, 393255, 7, 0, 458752, -1610612736, 65537, 458753, -536870912, 1, 458785, 7, 0, 458791, 7, 0, 524288, -1610612732, 65537, 524289, -1610612732, 1, 524321, 7, 0, 524327, 1, 0, 589824, -1610612732, 65537, 589825, -1610612732, 1, 589857, 7, 0, 589863, 1, 0, 655360, -1610612736, 65537, 655361, -1610612736, 1, 655399, 7, 0, 720896, 0, 65537, 720897, -1610612736, 1, 720935, 7, 0, 786432, -536870904, 65537, 786433, -536870904, 1, 786471, 1, 0, 851968, 536870920, 65537, 851969, -1610612728, 1, 852007, 7, 0, 917504, -1610612735, 65537, 917505, -1610612735, 65536, 917506, 1, 1, 917507, 536870919, 1, 917508, 1, 1, 917509, 1, 1, 917510, 536870919, 1, 917511, 1, 1, 917512, 1, 1, 917513, 1, 1, 917514, 536870919, 1, 917515, 536870919, 1, 917516, 536870919, 1, 917517, 1, 1, 917518, 1, 1, 917519, 1, 1, 917520, 1, 1, 917521, 536870919, 1, 917522, 1, 1, 917523, 536870919, 1, 917524, 7, 0, 917525, 7, 0, 917526, 7, 0, 917527, 7, 0, 917528, 1, 65536, 917529, 1, 65536, 917530, 1, 65536, 917531, 7, 0, 917532, 7, 0, 917533, 7, 0, 917534, 1, 0, 917535, 1, 0, 917536, 1, 0, 917537, 1, 0, 917538, 7, 0, 917539, 7, 0, 917540, 1, 0, 917541, 1, 0, 917542, 7, 0, 917543, 1, 0, 983040, 1610612738, 65537, 983041, -1073741822, 65537, 983042, -2147483642, 65537, 983043, -2147483642, 65537, 983044, 1610612738, 65537, 983045, -1073741822, 65537, 983046, 1, 65537, 983047, 1, 65537, 983048, -2147483641, 65537, 983049, -2147483641, 65537, 983050, 0, 65537, 983051, 0, 65537, 983052, 1610612738, 65537, 983053, -1073741822, 65537, 983054, 1610612738, 65537, 983055, -1073741822, 65537, 983056, 1, 65537, 983057, 1, 65537, 983058, -2147483641, 65537, 983059, -2147483641, 65537, 983060, 5, 0, 983061, 5, 1, 983062, 8, 0, 983063, 8, 1, 983064, 9, 0, 983065, 9, 0, 983066, 1, 0, 983067, 1, 65536, 983068, 3, 0, 983069, 3, 0, 983070, 6, 0, 983071, 6, 0, 983072, 5, 0, 983073, 5, 1, 983074, 8, 0, 983075, 8, 1, 983076, 3, 0, 983077, 3, 0, 983078, 6, 0, 983079, 6, 0, 1048576, -1610612734, 65537, 1048577, 2, 65537, 1048578, -2147483642, 65537, 1048579, -2147483642, 65537, 1048580, -1610612734, 65537, 1048581, 2, 65537, 1048582, 1, 65537, 1048583, 1, 65537, 1048584, -2147483641, 65537, 1048585, -2147483641, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, -1610612734, 65537, 1048589, 2, 65537, 1048590, -1610612734, 65537, 1048591, 2, 65537, 1048592, 1, 65537, 1048593, 1, 65537, 1048594, -2147483641, 65537, 1048595, -2147483641, 65537, 1048596, 5, 65536, 1048597, 5, 65537, 1048598, 8, 65536, 1048599, 8, 65537, 1048600, 9, 0, 1048601, 9, 0, 1048602, 1, 0, 1048603, 1, 65536, 1048604, 3, 0, 1048605, 3, 0, 1048606, 6, 0, 1048607, 6, 0, 1048608, 5, 65536, 1048609, 5, 65537, 1048610, 8, 65536, 1048611, 8, 65537, 1048612, 3, 0, 1048613, 3, 0, 1048614, 6, 0, 1048615, 6, 0 )
+
+[node name="OW" type="TileMap" parent="TileMap_Labo"]
+tile_set = SubResource( 12 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+tile_data = PoolIntArray( 262178, 0, 0, 262179, 0, 65536, 262180, 0, 65536, 262181, 0, 65536, 262182, 0, 1, 589858, 0, 0, 589859, 0, 65536, 589860, 0, 65536, 589861, 0, 65536, 589862, 0, 1 )
+
+[node name="Portes" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65571, 0, 0, 393251, 0, 0, 720931, 0, 0 )
+
+[node name="Sous-niveaux" type="Node2D" parent="."]
+
+[node name="N31" type="Area2D" parent="Sous-niveaux"]
+collision_layer = 0
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sous-niveaux/N31"]
+position = Vector2( 1168, 408 )
+shape = SubResource( 16 )
+
+[node name="N32" type="Area2D" parent="Sous-niveaux"]
+collision_layer = 0
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sous-niveaux/N32"]
+position = Vector2( 1168, 248 )
+shape = SubResource( 14 )
+
+[node name="N33" type="Area2D" parent="Sous-niveaux"]
+collision_layer = 0
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sous-niveaux/N33"]
+position = Vector2( 1168, 88 )
+shape = SubResource( 15 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource( 7 )]
+
+[node name="Pause" parent="GUI" instance=ExtResource( 6 )]
+visible = false
+
+[node name="Test Perso" parent="." instance=ExtResource( 5 )]
+position = Vector2( 100, 398 )
+
+[node name="Fall zone" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall zone"]
+position = Vector2( 1426, 613.75 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Sous-niveaux/N31" to="Sous-niveaux/N31" method="_on_N31_body_entered"]
+[connection signal="body_exited" from="Sous-niveaux/N31" to="Sous-niveaux/N31" method="_on_N31_body_exited"]
+[connection signal="body_entered" from="Sous-niveaux/N32" to="Sous-niveaux/N32" method="_on_N32_body_entered"]
+[connection signal="body_exited" from="Sous-niveaux/N32" to="Sous-niveaux/N32" method="_on_N32_body_exited"]
+[connection signal="body_entered" from="Sous-niveaux/N33" to="Sous-niveaux/N33" method="_on_N33_body_entered"]
+[connection signal="body_exited" from="Sous-niveaux/N33" to="Sous-niveaux/N33" method="_on_N33_body_exited"]
