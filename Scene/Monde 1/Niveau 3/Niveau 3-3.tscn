@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=2]
@@ -8,8 +8,8 @@
 [ext_resource path="res://Assets/Portes/Porte_Fin.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Portes/Porte_Labo.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=8]
-[ext_resource path="res://Code/Monde 1/Niveau 3/Niveau 3-1.gd" type="Script" id=9]
-[ext_resource path="res://Scene/Fleur.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Code/Monde 1/Niveau 3/Niveau 3-3.gd" type="Script" id=9]
+[ext_resource path="res://Code/Monde 1/Niveau 3/N3VH.gd" type="Script" id=10]
 [ext_resource path="res://Code/Monde 1/Niveau 3/Retour N3.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
@@ -108,7 +108,10 @@ extents = Vector2( 1425, 69.25 )
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 40, 40 )
 
-[node name="Sous-niveau 1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 40, 39.75 )
+
+[node name="Sous-niveau 3" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -142,7 +145,7 @@ format = 1
 tile_set = SubResource( 13 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 720899, 0, 0 )
+tile_data = PoolIntArray( 720899, 0, 0, 720920, 536870913, 0 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -161,9 +164,6 @@ collision_layer = 4
 position = Vector2( 1426, 613.75 )
 shape = SubResource( 14 )
 
-[node name="Fleur" parent="." instance=ExtResource( 10 )]
-position = Vector2( 811, 376 )
-
 [node name="Retour N3" type="Area2D" parent="."]
 script = ExtResource( 11 )
 
@@ -171,8 +171,15 @@ script = ExtResource( 11 )
 position = Vector2( 144, 408 )
 shape = SubResource( 15 )
 
+[node name="N3VH" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="N3VH"]
+position = Vector2( 816, 408 )
+shape = SubResource( 16 )
+
 [connection signal="body_entered" from="Fall zone" to="Test Perso" method="_on_Fall_zone_body_entered"]
-[connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]
-[connection signal="FleurRecuperer" from="Fleur" to="GUI/HUD" method="_on_Fleur_FleurRecuperer"]
 [connection signal="body_entered" from="Retour N3" to="Retour N3" method="_on_Retour_N3_body_entered"]
 [connection signal="body_exited" from="Retour N3" to="Retour N3" method="_on_Retour_N3_body_exited"]
+[connection signal="body_entered" from="N3VH" to="N3VH" method="_on_N2VH_body_entered"]
+[connection signal="body_exited" from="N3VH" to="N3VH" method="_on_N2VH_body_exited"]

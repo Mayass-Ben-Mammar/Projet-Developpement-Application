@@ -11,7 +11,7 @@ var SPEED = 200
 const RUNSPEED = 500
 const GRAVITY = 30
 const JFORCE = -1000
-var Velocity = Vector2(0, 0)
+var Velocity = Global.position
 var Coins = 0
 var hurt = 0
 var double_tap = false
@@ -57,7 +57,6 @@ func _physics_process(delta):
 				if double_tap == true:
 					cours = true
 				elif is_on_wall():
-					rebond()
 					cours = false
 				Velocity.x = SPEED
 				$Sprite.play(fonce_roule)
@@ -67,7 +66,6 @@ func _physics_process(delta):
 				if double_tap == true:
 					cours = true
 				elif is_on_wall():
-					rebond()
 					cours = false
 				Velocity.x = -SPEED
 				$Sprite.play(fonce_roule)
@@ -132,12 +130,6 @@ func mal(var posx):
 	set_collision_layer_bit(0, false)
 	hurt = 15
 	$Timer.start()
-
-
-func rebond():
-	print("test")#utiliser raycast
-	Input.action_release("left")
-	Input.action_release("right")
 
 
 func _on_Timer_timeout():

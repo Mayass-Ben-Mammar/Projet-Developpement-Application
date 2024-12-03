@@ -7,6 +7,7 @@ var max_lives = 200
 var lives = max_lives
 var hud
 var dir = Directory.new()
+var position = Vector2()
 
 func _ready():
 	charger()
