@@ -1,0 +1,203 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
+[ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Test Perso.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Fleur.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/TileSet_Labo/Grille.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Portes/Porte_Fin.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Portes/Porte_Labo.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=9]
+[ext_resource path="res://Code/Monde 1/Niveau 4/Niveau 4-1.gd" type="Script" id=10]
+[ext_resource path="res://Scene/Mechant.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Code/Monde 1/Niveau 4/N4VH.gd" type="Script" id=12]
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=18]
+0/name = "Grille.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 17 )
+0/shape_one_way = true
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=19]
+0/name = "Porte_Labo.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Porte_Fin.png 1"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 96, 96 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 2575.5, 69.25 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 40, 39.75 )
+
+[node name="Sous-niveau 1" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Fond Loin" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1410, 816 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Fond Loin"]
+position = Vector2( 2, -290 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="TileMap_Labo" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+tile_data = PoolIntArray( -3145729, 1, 0, -3211264, 1, 0, -3211263, 1, 0, -3211262, 1, 0, -3211261, 1, 0, -3211260, 1, 0, -3211259, 1, 0, -3211258, 1, 0, -3211257, 1, 0, -3211256, 1, 0, -3211255, 1, 0, -3211254, 1, 0, -3211253, 1, 0, -3211252, 1, 0, -3211251, 1, 0, -3211250, 1, 0, -3211249, 1, 0, -3211248, 1, 0, -3211247, 1, 0, -3211246, 1, 0, -3211245, 1, 0, -3211244, 1, 0, -3211243, 1, 0, -3211242, 1, 0, -3211241, 1, 0, -3211240, 1, 0, -3211239, 1, 0, -3211238, 1, 0, -3211237, 1, 0, -3211236, 1, 0, -3211235, 1, 0, -3211234, 1, 0, -3080193, 1, 0, -3145698, 1, 0, -3014657, 1, 0, -3080162, 1, 0, -2949121, 1, 0, -3014626, 1, 0, -2883585, 1, 0, -2949090, 1, 0, -2818049, 1, 0, -2883554, 1, 0, -2752513, 1, 0, -2818018, 1, 0, -2686977, 1, 0, -2752482, 1, 0, -2621441, 1, 0, -2686946, 1, 0, -2555905, 1, 0, -2621410, 1, 0, -2490369, 1, 0, -2555874, 1, 0, -2490368, 7, 0, -2490364, 1, 0, -2490363, 7, 0, -2490362, 7, 0, -2490361, 1, 0, -2490360, 1, 0, -2490356, 1, 0, -2490355, 1, 0, -2490354, 7, 0, -2490353, 7, 0, -2490352, 1, 0, -2490351, 7, 0, -2490347, 1, 0, -2490346, 1, 0, -2490345, 7, 0, -2490344, 7, 0, -2490343, 7, 0, -2490339, 1, 0, -2424832, 7, 0, -2424828, 1, 0, -2424824, 7, 0, -2424820, 7, 0, -2424815, 7, 0, -2424811, 1, 0, -2424807, 1, 0, -2424803, 7, 0, -2359296, 1, 0, -2359292, 1, 0, -2359288, 7, 0, -2359284, 7, 0, -2359279, 7, 0, -2359275, 1, 0, -2359271, 1, 0, -2359267, 7, 0, -2293760, 1, 0, -2293756, 1, 0, -2293752, 7, 0, -2293748, 1, 0, -2293743, 7, 0, -2293739, 7, 0, -2293735, 7, 0, -2293731, 7, 0, -2228224, 1, 0, -2228220, 7, 0, -2228216, 1, 0, -2228212, 1, 0, -2228207, 1, 0, -2228203, 7, 0, -2228199, 7, 0, -2228195, 7, 0, -2162688, 7, 0, -2162684, 7, 0, -2162680, 1, 0, -2162676, 1, 0, -2162671, 1, 0, -2162667, 7, 0, -2162663, 1, 0, -2162659, 1, 0, -2097152, 7, 0, -2097148, 1, 0, -2097144, 1, 0, -2097140, 1, 0, -2097135, 1, 0, -2097131, 1, 0, -2097127, 1, 0, -2097123, 7, 0, -2031616, 1, 0, -2031612, 7, 0, -2031604, 1, 0, -2031595, 1, 0, -2031587, 1, 0, -1966080, 1, 0, -1966076, 7, 0, -1966068, 7, 0, -1966059, 7, 0, -1966051, 1, 0, -1900544, 7, 0, -1900540, 1, 0, -1900532, 1, 0, -1900523, 7, 0, -1900515, 7, 0, -1835008, 1, 0, -1835004, 7, 0, -1834996, 7, 0, -1834987, 1, 0, -1834979, 7, 0, -1769472, 7, 0, -1769468, 1, 0, -1769467, 7, 0, -1769466, 1, 0, -1769465, 1, 0, -1769464, 7, 0, -1769460, 7, 0, -1769459, 1, 0, -1769458, 1, 0, -1769457, 1, 0, -1769456, 7, 0, -1769455, 1, 0, -1769451, 7, 0, -1769450, 1, 0, -1769449, 7, 0, -1769448, 1, 0, -1769447, 7, 0, -1769443, 7, 0, -1703936, 7, 0, -1703907, 1, 0, -1638400, 7, 0, -1638371, 1, 0, -1572864, 1, 0, -1572835, 7, 0, -1507328, 1, 0, -1507299, 7, 0, -1441792, 7, 0, -1441763, 1, 0, -1376256, 7, 0, -1376255, 7, 0, -1376254, 7, 0, -1376253, 1, 0, -1376247, 7, 0, -1376246, 7, 0, -1376245, 7, 0, -1376238, 1, 0, -1376237, 1, 0, -1376236, 7, 0, -1376229, 1, 0, -1376228, 1, 0, -1376227, 7, 0, -1310717, 7, 0, -1310711, 1, 0, -1310709, 7, 0, -1310702, 7, 0, -1310700, 7, 0, -1310693, 7, 0, -1245181, 1, 0, -1245175, 1, 0, -1245173, 7, 0, -1245166, 7, 0, -1245164, 7, 0, -1245157, 7, 0, -1179645, 7, 0, -1179639, 1, 0, -1179637, 7, 0, -1179630, 7, 0, -1179628, 1, 0, -1179621, 1, 0, -1114109, 7, 0, -1114103, 1, 0, -1114101, 7, 0, -1114094, 7, 0, -1114092, 1, 0, -1114085, 7, 0, -1048573, 1, 0, -1048567, 7, 0, -1048565, 1, 0, -1048558, 7, 0, -1048556, 7, 0, -1048549, 1, 0, -983037, 1, 0, -983031, 7, 0, -983029, 1, 0, -983022, 1, 0, -983020, 7, 0, -983013, 7, 0, -917501, 7, 0, -917495, 1, 0, -917493, 7, 0, -917486, 1, 0, -917484, 7, 0, -917477, 7, 0, -851965, 1, 0, -851959, 1, 0, -851957, 7, 0, -851950, 7, 0, -851948, 7, 0, -851941, 1, 0, -786429, 7, 0, -786423, 1, 0, -786421, 7, 0, -786414, 7, 0, -786412, 7, 0, -786405, 1, 0, -720893, 7, 0, -720887, 1, 0, -720885, 7, 0, -720878, 1, 0, -720876, 7, 0, -720869, 1, 0, -655360, 1, 0, -655359, 1, 0, -655358, 1, 0, -655357, 1, 0, -655351, 7, 0, -655350, 1, 0, -655349, 1, 0, -655342, 1, 0, -655341, 1, 0, -655340, 1, 0, -655333, 1, 0, -589824, 7, 0, -589804, 1, 0, -589797, 1, 0, -524288, 7, 0, -524268, 1, 0, -524261, 1, 0, -458752, 7, 0, -458732, 7, 0, -458725, 7, 0, -393216, 1, 0, -393196, 7, 0, -393189, 7, 0, -327680, 1, 0, -327660, 1, 0, -327653, 7, 0, -262144, 7, 0, -262124, 1, 0, -262117, 7, 0, -196608, 1, 0, -196588, 7, 0, -196581, 7, 0, -131072, 1, 0, -131052, 7, 0, -131045, 7, 0, -65536, 7, 0, -65535, 7, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 7, 0, -65529, 1, 0, -65528, 7, 0, -65527, 1, 0, -65526, 7, 0, -65525, 7, 0, -65524, 7, 0, -65523, 1, 0, -65522, 1, 0, -65516, 1, 0, -65509, 7, 0, -65508, 1, 0, -65507, 1, 0, 0, 7, 0, 29, 7, 0, 65536, 7, 0, 65565, 7, 0, 131072, 7, 0, 131101, 7, 0, 196608, 7, 0, 196637, 7, 0, 262144, 1, 0, 262173, 1, 0, 327680, 7, 0, 327704, 12, 0, 327709, 1, 0, 393216, 1, 0, 393245, 1, 0, 458752, 7, 0, 458781, 7, 0, 524288, 1, 0, 524317, 7, 0, 589824, 7, 0, 589853, 7, 0, 655360, 7, 0, 655389, 7, 0, 720896, 1, 0, 720925, 1, 0, 786432, 7, 0, 786461, 7, 0, 851968, 1, 0, 851997, 7, 0, 917504, 7, 0, 917533, 7, 0, 983040, 7, 0, 983069, 1, 0, 1048576, 7, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 7, 0, 1048580, 7, 0, 1048581, 7, 0, 1048582, 1, 0, 1048583, 7, 0, 1048584, 1, 0, 1048585, 7, 0, 1048586, 7, 0, 1048587, 7, 0, 1048588, 7, 0, 1048589, 7, 0, 1048590, 7, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 7, 0, 1048594, 1, 0, 1048595, 7, 0, 1048596, 7, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 7, 0, 1048600, 7, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 7, 0, 1048604, 7, 0, 1048605, 7, 0 )
+
+[node name="OW" type="TileMap" parent="TileMap_Labo"]
+tile_set = SubResource( 18 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+tile_data = PoolIntArray( -2490367, 0, 0, -2490366, 0, 65536, -2490365, 0, 1, -2490359, 0, 0, -2490358, 0, 65536, -2490357, 0, 1, -2490350, 0, 0, -2490349, 0, 65536, -2490348, 0, 1, -2490342, 0, 0, -2490341, 0, 65536, -2490340, 0, 1, -1769463, 0, 0, -1769462, 0, 65536, -1769461, 0, 1, -1769454, 0, 0, -1769453, 0, 65536, -1769452, 0, 1, -1769446, 0, 0, -1769445, 0, 65536, -1769444, 0, 1, -1376252, 0, 0, -1376251, 0, 65536, -1376250, 0, 65536, -1376249, 0, 65536, -1376248, 0, 1, -1376244, 0, 0, -1376243, 0, 65536, -1376242, 0, 65536, -1376241, 0, 65536, -1376240, 0, 65536, -1376239, 0, 1, -1376235, 0, 0, -1376234, 0, 65536, -1376233, 0, 65536, -1376232, 0, 65536, -1376231, 0, 65536, -1376230, 0, 1, -65521, 0, 0, -65520, 0, 65536, -65519, 0, 65536, -65518, 0, 65536, -65517, 0, 1 )
+
+[node name="Portes" type="TileMap" parent="."]
+tile_set = SubResource( 19 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -196452, 0, 0, 851971, 1, 0 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource( 5 )]
+
+[node name="Pause" parent="GUI" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Test Perso" parent="." instance=ExtResource( 3 )]
+position = Vector2( 477, -1267 )
+
+[node name="Fall zone" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall zone"]
+position = Vector2( 2576.5, 613.75 )
+shape = SubResource( 20 )
+
+[node name="Fleur" parent="." instance=ExtResource( 4 )]
+position = Vector2( 768, -288 )
+NB = 2
+
+[node name="Dossier Mechant" type="Node2D" parent="."]
+
+[node name="Mechant" parent="Dossier Mechant" instance=ExtResource( 11 )]
+position = Vector2( 216, -904 )
+smart = false
+
+[node name="Mechant2" parent="Dossier Mechant" instance=ExtResource( 11 )]
+position = Vector2( 480, -903 )
+smart = false
+
+[node name="Mechant3" parent="Dossier Mechant" instance=ExtResource( 11 )]
+position = Vector2( 752, -903 )
+smart = false
+
+[node name="Mechant4" parent="Dossier Mechant" instance=ExtResource( 11 )]
+position = Vector2( 89, -68 )
+smart = false
+
+[node name="Mechant5" parent="Dossier Mechant" instance=ExtResource( 11 )]
+position = Vector2( 164, -68 )
+smart = false
+
+[node name="Mechant6" parent="Dossier Mechant" instance=ExtResource( 11 )]
+position = Vector2( 240, -69 )
+smart = false
+
+[node name="Mechant7" parent="Dossier Mechant" instance=ExtResource( 11 )]
+position = Vector2( 318, -68 )
+smart = false
+
+[node name="N4VH" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="N4VH"]
+position = Vector2( 144, 472 )
+shape = SubResource( 21 )
+
+[connection signal="body_entered" from="Fall zone" to="Test Perso" method="_on_Fall_zone_body_entered"]
+[connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]
+[connection signal="FleurRecuperer" from="Fleur" to="GUI/HUD" method="_on_Fleur_FleurRecuperer"]
+[connection signal="body_entered" from="N4VH" to="N4VH" method="_on_N4VH_body_entered"]
+[connection signal="body_exited" from="N4VH" to="N4VH" method="_on_N4VH_body_exited"]

@@ -172,6 +172,7 @@ position = Vector2( 144, 408 )
 shape = SubResource( 15 )
 
 [node name="N3VH" type="Area2D" parent="."]
+collision_layer = 0
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="N3VH"]
