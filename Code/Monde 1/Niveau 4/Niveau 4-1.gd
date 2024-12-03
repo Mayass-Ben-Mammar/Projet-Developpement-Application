@@ -9,9 +9,10 @@ func _ready():
 	if save.Fleur15 == 1:
 		$GUI/HUD/Fleur1A.show()
 	if save.Fleur16 == 1:
+		$Fleur.queue_free()
 		$GUI/HUD/Fleur2A.show()
 
 
-func _on_Fleur_FleurRecuperer():
+func _on_Fleur_FleurRecuperer(val):
 	save.Fleur16 = 1
 	Global.sauvegarder()
