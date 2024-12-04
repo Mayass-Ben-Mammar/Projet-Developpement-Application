@@ -1,0 +1,199 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Test Perso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Mechant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Fleur.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/TileSet_Labo/Grille.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Portes/Porte_Fin.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Portes/Porte_Labo.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=10]
+[ext_resource path="res://Code/Monde 1/Niveau 5/N5VH.gd" type="Script" id=11]
+[ext_resource path="res://Code/Monde 1/Niveau 5/Niveau 5-0.gd" type="Script" id=12]
+[ext_resource path="res://Scene/Monde 1/Niveau 5/Mini Boss.tscn" type="PackedScene" id=13]
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=18]
+0/name = "Grille.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 17 )
+0/shape_one_way = true
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=19]
+0/name = "Porte_Labo.png 0"
+0/texture = ExtResource( 9 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Porte_Fin.png 1"
+1/texture = ExtResource( 8 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 96, 96 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 478.25, 21.5 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 2575.5, 69.25 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 40, 39.75 )
+
+[node name="Niveau 5" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Fond Loin" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1410, 816 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Fond Loin"]
+position = Vector2( 2, -290 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="TileMap_Labo" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+tile_data = PoolIntArray( -1638400, 1, 0, -1638399, 1, 0, -1638398, 7, 0, -1638397, 7, 0, -1638396, 1, 0, -1638395, 1, 0, -1638394, 1, 0, -1638393, 1, 0, -1638392, 7, 0, -1638391, 1, 0, -1638390, 1, 0, -1638389, 1, 0, -1638388, 1, 0, -1638387, 1, 0, -1638386, 7, 0, -1638385, 7, 0, -1638384, 7, 0, -1638383, 1, 0, -1638382, 1, 0, -1638381, 1, 0, -1638380, 1, 0, -1638379, 1, 0, -1638378, 1, 0, -1638377, 7, 0, -1638376, 7, 0, -1638375, 7, 0, -1638374, 7, 0, -1638373, 7, 0, -1638372, 1, 0, -1638371, 1, 0, -1572864, 1, 0, -1572835, 1, 0, -1507328, 7, 0, -1507299, 7, 0, -1441792, 7, 0, -1441763, 7, 0, -1376256, 7, 0, -1376227, 7, 0, -1310720, 7, 0, -1310691, 7, 0, -1245184, 1, 0, -1245155, 1, 0, -1179648, 1, 0, -1179619, 1, 0, -1114112, 1, 0, -1114083, 1, 0, -1048576, 7, 0, -1048547, 7, 0, -983040, 7, 0, -983011, 7, 0, -917504, 7, 0, -917503, 1, 0, -917502, 7, 0, -917501, 7, 0, -917500, 7, 0, -917499, 7, 0, -917498, 7, 0, -917497, 1, 0, -917496, 1, 0, -917495, 1, 0, -917494, 1, 0, -917493, 1, 0, -917492, 1, 0, -917491, 1, 0, -917490, 7, 0, -917475, 7, 0, -851968, 1, 0, -851939, 1, 0, -786432, 7, 0, -786403, 1, 0, -720896, 7, 0, -720867, 7, 0, -655360, 7, 0, -655331, 7, 0, -589824, 1, 0, -589795, 7, 0, -524288, 1, 0, -524259, 1, 0, -458752, 7, 0, -458737, 1, 0, -458736, 1, 0, -458735, 1, 0, -458734, 7, 0, -458733, 7, 0, -458732, 7, 0, -458731, 7, 0, -458730, 1, 0, -458729, 1, 0, -458728, 1, 0, -458727, 7, 0, -458726, 7, 0, -458725, 7, 0, -458724, 1, 0, -458723, 1, 0, -393216, 1, 0, -393187, 7, 0, -327680, 7, 0, -327651, 7, 0, -262144, 7, 0, -262115, 7, 0, -196608, 7, 0, -196579, 1, 0, -131072, 7, 0, -131043, 7, 0, -65536, 1, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 7, 0, -65528, 7, 0, -65527, 7, 0, -65526, 1, 0, -65525, 7, 0, -65524, 1, 0, -65523, 7, 0, -65522, 1, 0, -65507, 1, 0, 0, 7, 0, 29, 7, 0, 65536, 7, 0, 65565, 7, 0, 131072, 7, 0, 131101, 7, 0, 196608, 7, 0, 196637, 7, 0, 262144, 1, 0, 262173, 1, 0, 327680, 7, 0, 327704, 12, 0, 327709, 1, 0, 393216, 1, 0, 393245, 1, 0, 458752, 7, 0, 458781, 7, 0, 524288, 1, 0, 524317, 7, 0, 589824, 7, 0, 589853, 7, 0, 655360, 7, 0, 655389, 7, 0, 720896, 1, 0, 720925, 1, 0, 786432, 7, 0, 786461, 7, 0, 851968, 1, 0, 851997, 7, 0, 917504, 7, 0, 917533, 7, 0, 983040, 7, 0, 983069, 1, 0, 1048576, 7, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 7, 0, 1048580, 7, 0, 1048581, 7, 0, 1048582, 1, 0, 1048583, 7, 0, 1048584, 1, 0, 1048585, 7, 0, 1048586, 7, 0, 1048587, 7, 0, 1048588, 7, 0, 1048589, 7, 0, 1048590, 7, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 7, 0, 1048594, 1, 0, 1048595, 7, 0, 1048596, 7, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 7, 0, 1048600, 7, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 7, 0, 1048604, 7, 0, 1048605, 7, 0 )
+
+[node name="OW" type="TileMap" parent="TileMap_Labo"]
+tile_set = SubResource( 18 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 17
+format = 1
+
+[node name="Portes" type="TileMap" parent="."]
+tile_set = SubResource( 19 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -196452, 0, 0, 851971, 1, 0 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource( 4 )]
+
+[node name="Pause" parent="GUI" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Boss signal" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss signal"]
+position = Vector2( 481.75, 22 )
+shape = SubResource( 22 )
+
+[node name="Test Perso" parent="Boss signal" instance=ExtResource( 2 )]
+position = Vector2( 73, -500 )
+
+[node name="Fall zone" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall zone"]
+position = Vector2( 2576.5, 613.75 )
+shape = SubResource( 20 )
+
+[node name="Fleur" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1127, -407 )
+
+[node name="Dossier Mechant" type="Node2D" parent="."]
+
+[node name="Mechant" parent="Dossier Mechant" instance=ExtResource( 3 )]
+position = Vector2( 379, -482 )
+
+[node name="Mechant2" parent="Dossier Mechant" instance=ExtResource( 3 )]
+position = Vector2( 764, -266 )
+direction = 1
+
+[node name="Mechant3" parent="Dossier Mechant" instance=ExtResource( 3 )]
+position = Vector2( 271, -68 )
+
+[node name="N5VH" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="N5VH"]
+position = Vector2( 1197, -198 )
+shape = SubResource( 21 )
+
+[node name="Mini Boss" parent="." instance=ExtResource( 13 )]
+collision_layer = 0
+
+[connection signal="body_entered" from="Boss signal" to="." method="_on_Boss_signal_body_entered"]
+[connection signal="body_entered" from="Boss signal" to="Boss signal" method="_on_Boss_signal_body_entered"]
+[connection signal="body_entered" from="Fall zone" to="Boss signal/Test Perso" method="_on_Fall_zone_body_entered"]
+[connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]
+[connection signal="FleurRecuperer" from="Fleur" to="GUI/HUD" method="_on_Fleur_FleurRecuperer"]
+[connection signal="body_entered" from="N5VH" to="N5VH" method="_on_N5VH_body_entered"]
+[connection signal="body_exited" from="N5VH" to="N5VH" method="_on_N5VH_body_exited"]

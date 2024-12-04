@@ -10,9 +10,8 @@ func _on_N2VH_body_exited(body):
 	entree = false
 
 func _process(delta):
-	if entree == true:
-		if Input.is_action_just_pressed("up"):
-			save.N13 = 1
-			Global.sauvegarder()
-			Transition.Change_Niveau("res://Scene/Monde 1/HUB1.tscn")
+	if entree == true and Input.is_action_just_pressed("up"):
+		save.N13 = 1
+		Global.sauvegarder()
+		Transition.Change_Niveau("res://Scene/Monde 1/HUB1.tscn")
 
