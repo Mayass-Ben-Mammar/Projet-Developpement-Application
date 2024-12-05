@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Arbres/SpriteMC.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Test Perso.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Son/fonce.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37.5, 40 )
 
-[node name="Test Perso" type="KinematicBody2D"]
+[node name="MATOS" type="KinematicBody2D"]
 collision_mask = 6
 script = ExtResource( 2 )
 __meta__ = {
@@ -17,7 +18,7 @@ __meta__ = {
 position = Vector2( 3, 6 )
 frames = ExtResource( 1 )
 animation = "Clignement"
-frame = 2
+frame = 6
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -51,6 +52,7 @@ drag_margin_left = 0.3
 editor_draw_limits = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

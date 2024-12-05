@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 Global="*res://Code/Global.gd"
 Transition="*res://Scene/Transition.tscn"
 Musique="*res://Scene/Musique.tscn"
+MATOS="*res://Scene/Test Perso.tscn"
 
 [display]
 

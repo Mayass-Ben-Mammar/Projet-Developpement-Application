@@ -1,18 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Arbres/Theme.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/Background/BackgroundT.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Background/FondHM.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Police d'écriture/Pixels.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Code/Jouer.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Police d'écriture/Pixeled.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Code/Main Menu.gd" type="Script" id=5]
-[ext_resource path="res://Code/Retour.gd" type="Script" id=6]
-[ext_resource path="res://Code/Jouer2.gd" type="Script" id=7]
-[ext_resource path="res://Code/Effacer.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
 extra_spacing_bottom = 19
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
 
 [node name="Main Menu" type="Node"]
 script = ExtResource( 5 )
@@ -23,56 +23,110 @@ script = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
+flip_h = true
+flip_v = true
 
 [node name="Jouer" type="Button" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -869.0
-margin_top = 368.0
-margin_right = -488.0
-margin_bottom = -71.0
+margin_left = -910.0
+margin_top = 139.0
+margin_right = -670.0
+margin_bottom = -325.0
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Jouer"
-script = ExtResource( 4 )
 
-[node name="Retour" type="Button" parent="CanvasLayer"]
+[node name="Quitter" type="Button" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -462.0
-margin_top = 370.0
-margin_right = -81.0
-margin_bottom = -69.0
+margin_left = -910.0
+margin_top = 339.0
+margin_right = -670.0
+margin_bottom = -125.0
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
-text = "retour"
-script = ExtResource( 6 )
+text = "quitter"
 
-[node name="Jouer2" type="Button" parent="CanvasLayer"]
+[node name="Option" type="Button" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -659.0
-margin_top = 154.0
-margin_right = -278.0
-margin_bottom = -285.0
+margin_left = -910.0
+margin_top = 239.0
+margin_right = -670.0
+margin_bottom = -225.0
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Jouer pour de vrai"
-script = ExtResource( 7 )
+text = "option"
 
-[node name="Effacer" type="Button" parent="CanvasLayer"]
-margin_left = 378.0
-margin_top = 51.0
-margin_right = 597.0
-margin_bottom = 101.0
+[node name="Container" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Container"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 910.0
+margin_bottom = 494.0
+color = Color( 0, 0, 0, 0.509804 )
+
+[node name="Retour" type="Button" parent="CanvasLayer/Container"]
+margin_left = 70.0
+margin_top = 70.0
+margin_right = 310.0
+margin_bottom = 150.0
+theme = ExtResource( 1 )
+text = "Retour"
+
+[node name="Effacer" type="Button" parent="CanvasLayer/Container"]
+margin_left = 650.0
+margin_top = 70.0
+margin_right = 890.0
+margin_bottom = 150.0
 theme = ExtResource( 1 )
 text = "Effacer sauvegarde"
-script = ExtResource( 8 )
 
-[connection signal="pressed" from="CanvasLayer/Jouer" to="CanvasLayer/Jouer" method="_on_Jouer_pressed"]
-[connection signal="pressed" from="CanvasLayer/Retour" to="CanvasLayer/Retour" method="_on_Jouer_pressed"]
-[connection signal="pressed" from="CanvasLayer/Jouer2" to="CanvasLayer/Jouer2" method="_on_Jouer_pressed"]
-[connection signal="pressed" from="CanvasLayer/Effacer" to="CanvasLayer/Effacer" method="_on_Effacer_pressed"]
+[node name="Music" type="Label" parent="CanvasLayer/Container"]
+margin_left = 88.0
+margin_top = 412.0
+margin_right = 179.0
+margin_bottom = 458.0
+custom_fonts/font = SubResource( 2 )
+text = "Music : "
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Container"]
+margin_left = 184.0
+margin_top = 426.0
+margin_right = 804.0
+margin_bottom = 457.0
+min_value = -80.0
+max_value = 24.0
+tick_count = 100
+
+[node name="Bruit" type="Label" parent="CanvasLayer/Container"]
+margin_left = 88.0
+margin_top = 312.0
+margin_right = 179.0
+margin_bottom = 358.0
+custom_fonts/font = SubResource( 2 )
+text = "Bruits : "
+
+[node name="HSlider2" type="HSlider" parent="CanvasLayer/Container"]
+margin_left = 184.0
+margin_top = 326.0
+margin_right = 804.0
+margin_bottom = 357.0
+min_value = -80.0
+max_value = 24.0
+tick_count = 100
+
+[connection signal="pressed" from="CanvasLayer/Jouer" to="." method="_on_Jouer_pressed"]
+[connection signal="pressed" from="CanvasLayer/Quitter" to="." method="_on_Quitter_pressed"]
+[connection signal="pressed" from="CanvasLayer/Option" to="." method="_on_Option_pressed"]
+[connection signal="pressed" from="CanvasLayer/Container/Retour" to="." method="_on_Retour_pressed"]
+[connection signal="pressed" from="CanvasLayer/Container/Effacer" to="." method="_on_Effacer_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Container/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Container/HSlider2" to="." method="_on_HSlider2_value_changed"]
