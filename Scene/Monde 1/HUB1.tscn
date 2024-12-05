@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Code/Monde 1/1-3.gd" type="Script" id=12]
 [ext_resource path="res://Code/Monde 1/1-4.gd" type="Script" id=13]
 [ext_resource path="res://Code/Monde 1/1-5.gd" type="Script" id=14]
+[ext_resource path="res://Scene/HUD HUB.tscn" type="PackedScene" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Porte_Labo.png 0"
@@ -71,7 +72,10 @@ centered = false
 [node name="Pause" parent="GUI" instance=ExtResource( 8 )]
 visible = false
 
+[node name="HUD HUB" parent="GUI" instance=ExtResource( 15 )]
+
 [node name="Nom Niveaux" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

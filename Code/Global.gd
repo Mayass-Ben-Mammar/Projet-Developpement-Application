@@ -8,6 +8,7 @@ var lives = max_lives
 var hud
 var dir = Directory.new()
 var position = Vector2()
+var NB_Fleur = 0
 
 func _ready():
 	charger()
@@ -18,6 +19,13 @@ func lose_life(degat):
 	hud.Load_hearts()
 	if lives <= 0:
 		get_tree().change_scene("res://Scene/Perdu.tscn")
+
+func Compteur(val):
+	for i in 15:
+		var Fl = "Fleur" + str(val) + str(i+1)
+		if J_donnees[Fl] == 1:
+			NB_Fleur += 1
+
 
 func sauvegarder():
 	var fichier = File.new()

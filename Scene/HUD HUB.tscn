@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Police d'écriture/Pixeled.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Code/Monde 1/HUD HUB1.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Background/Fond_HUD_Fleur1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Background/Fond_HUD_Fleur1A.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="HUD HUB" type="Control"]
+margin_left = -1.0
+margin_top = -55.0
+margin_right = 39.0
+margin_bottom = -15.0
+script = ExtResource( 2 )
+
+[node name="Derriere" type="TextureRect" parent="."]
+margin_right = 960.0
+margin_bottom = 544.0
+texture = ExtResource( 3 )
+
+[node name="Devant" type="TextureRect" parent="."]
+margin_right = 960.0
+margin_bottom = 544.0
+texture = ExtResource( 4 )
+
+[node name="Deux Point" type="Label" parent="."]
+margin_left = 55.0
+margin_top = 55.0
+margin_right = 95.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 4 )
+text = " : "
+
+[node name="NBFleur" type="Label" parent="."]
+margin_left = 77.0
+margin_top = 55.0
+margin_right = 117.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 4 )
+text = "##"
