@@ -152,3 +152,9 @@ func _on_Clignement_timeout():
 
 func _on_Courir_timeout():
 	double_tap = false
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "LaserM":
+		mal(body.velocity.x)
+		Global.lose_life(10)

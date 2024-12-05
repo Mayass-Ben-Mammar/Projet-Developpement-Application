@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Labo_music.mp3-febc5e86e80270b440f67f82ee90366c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Son/Labo_music.mp3"
+dest_files=[ "res://.import/Labo_music.mp3-febc5e86e80270b440f67f82ee90366c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

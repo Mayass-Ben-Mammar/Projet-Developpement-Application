@@ -165,7 +165,7 @@ position = Vector2( 2576.5, 613.75 )
 shape = SubResource( 20 )
 
 [node name="Fleur" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1127, -407 )
+position = Vector2( 832, 447 )
 
 [node name="Dossier Mechant" type="Node2D" parent="."]
 
@@ -184,11 +184,11 @@ collision_layer = 0
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="N5VH"]
-position = Vector2( 1197, -198 )
+position = Vector2( 144, 472 )
 shape = SubResource( 21 )
 
 [node name="Mini Boss" parent="." instance=ExtResource( 13 )]
-collision_layer = 0
+collision_mask = 33
 
 [connection signal="body_entered" from="Boss signal" to="." method="_on_Boss_signal_body_entered"]
 [connection signal="body_entered" from="Boss signal" to="Boss signal" method="_on_Boss_signal_body_entered"]

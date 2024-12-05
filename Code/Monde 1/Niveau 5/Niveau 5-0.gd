@@ -7,9 +7,22 @@ func _ready():
 	$"Boss signal/Test Perso/Camera2D".limit_right = 960
 	$GUI/HUD/Fleur2.hide()
 	$GUI/HUD/Fleur3.hide()
+	$N5VH/CollisionShape2D.set_disabled(true)
+	$Portes.hide()
+	$Fleur/CollisionShape2D.set_disabled(true)
+	$Fleur.hide()
 	if save.Fleur17 == 1:
 		$Fleur.queue_free()
 		$GUI/HUD/Fleur1A.show()
+
+
+func _physics_process(delta):
+	if is_instance_valid($"Mini Boss") == false:
+		$N5VH/CollisionShape2D.set_disabled(false)
+		$Portes.show()
+		if save.Fleur17 == 0:
+			$Fleur/CollisionShape2D.set_disabled(false)
+			$Fleur.show()
 
 
 func _on_Fleur_FleurRecuperer(val):
