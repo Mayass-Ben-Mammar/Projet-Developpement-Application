@@ -19,4 +19,4 @@ func _on_Continuer_pressed():
 
 func _on_Quitter_pressed():
 	self.est_en_pause = false
-	Transition.Change_Niveau("res://Scene/MAP.tscn")
+	Transition.Change_Niveau("res://Scene/Main Menu.tscn")

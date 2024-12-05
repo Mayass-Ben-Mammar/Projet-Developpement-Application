@@ -11,6 +11,8 @@ func _ready():
 		$CanvasLayer/Nuage1.hide()
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("pause"):
+		Transition.Change_Niveau("res://Scene/Main Menu.tscn")
 	match monde_actuelle:
 		1:
 			$CanvasLayer/Fleche1.show()
