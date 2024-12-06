@@ -1,5 +1,6 @@
 extends Node
 
+onready var save = Global.J_donnees
 var valM = 0
 var valS = 0
 
@@ -8,6 +9,8 @@ func _ready():
 	Musique.jouer_music(2)
 
 func _physics_process(delta):
+	Global.NB_Fleur = 0
+	Global.Compteur(1)
 	if Input.is_action_just_pressed("jump"):
 		_on_Jouer_pressed()
 	if Input.is_action_just_pressed("pause"):
@@ -15,7 +18,10 @@ func _physics_process(delta):
 
 
 func _on_Jouer_pressed():
-	Transition.Change_Niveau("res://Scene/MAP.tscn")
+	if save.premiere_fois == true:
+		Transition.Change_Niveau("res://Scene/Cinematique 1.tscn")
+	else:
+		Transition.Change_Niveau("res://Scene/MAP.tscn")
 
 func _on_Quitter_pressed():
 	get_tree().quit()
@@ -23,6 +29,7 @@ func _on_Quitter_pressed():
 func _on_Effacer_pressed():
 	Global.J_donnees = null
 	Global.effacer()
+	Transition.Change_Niveau("res://Scene/Main Menu.tscn")
 
 
 func _on_Option_pressed():
@@ -42,3 +49,7 @@ func _on_HSlider2_value_changed(value):
 	$"/root/MATOS/AudioStreamPlayer".set_volume_db(valS)
 
 
+func _on_Secret_pressed():
+	if Global.NB_Fleur == 7:
+		Transition.Change_Niveau("res://Scene/Secret.tscn")
+		

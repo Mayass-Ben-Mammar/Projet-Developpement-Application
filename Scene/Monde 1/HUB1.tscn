@@ -68,13 +68,6 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="GUI" type="CanvasLayer" parent="."]
-
-[node name="Pause" parent="GUI" instance=ExtResource( 8 )]
-visible = false
-
-[node name="HUD HUB" parent="GUI" instance=ExtResource( 15 )]
-
 [node name="Nom Niveaux" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -236,6 +229,13 @@ shape = SubResource( 3 )
 
 [node name="Test Perso" parent="." instance=ExtResource( 4 )]
 position = Vector2( 100, 398 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD HUB" parent="GUI" instance=ExtResource( 15 )]
+
+[node name="Pause" parent="GUI" instance=ExtResource( 8 )]
+visible = false
 
 [connection signal="body_entered" from="Portes Area/1-1" to="Portes Area/1-1" method="_on_11_body_entered"]
 [connection signal="body_exited" from="Portes Area/1-1" to="Portes Area/1-1" method="_on_11_body_exited"]

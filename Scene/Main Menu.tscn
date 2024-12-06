@@ -78,10 +78,17 @@ text = "Ce jeu n'est qu'une DEMO"
 
 [node name="Fleur" type="TextureRect" parent="CanvasLayer"]
 margin_left = 575.0
-margin_top = 196.0
+margin_top = 205.0
 margin_right = 703.0
-margin_bottom = 324.0
+margin_bottom = 333.0
 texture = ExtResource( 6 )
+
+[node name="Secret" type="Button" parent="CanvasLayer"]
+margin_left = 575.0
+margin_top = 205.0
+margin_right = 702.0
+margin_bottom = 332.0
+flat = true
 
 [node name="TextFleur" type="Label" parent="CanvasLayer"]
 margin_left = 544.0
@@ -156,6 +163,7 @@ tick_count = 100
 [connection signal="pressed" from="CanvasLayer/Jouer" to="." method="_on_Jouer_pressed"]
 [connection signal="pressed" from="CanvasLayer/Quitter" to="." method="_on_Quitter_pressed"]
 [connection signal="pressed" from="CanvasLayer/Option" to="." method="_on_Option_pressed"]
+[connection signal="pressed" from="CanvasLayer/Secret" to="." method="_on_Secret_pressed"]
 [connection signal="pressed" from="CanvasLayer/Container/Retour" to="." method="_on_Retour_pressed"]
 [connection signal="pressed" from="CanvasLayer/Container/Effacer" to="." method="_on_Effacer_pressed"]
 [connection signal="value_changed" from="CanvasLayer/Container/HSlider" to="." method="_on_HSlider_value_changed"]
