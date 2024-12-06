@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Arbres/TileMap_Labo.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/Fond_Labo.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Code/Monde 1/1-4.gd" type="Script" id=13]
 [ext_resource path="res://Code/Monde 1/1-5.gd" type="Script" id=14]
 [ext_resource path="res://Scene/HUD HUB.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Code/Monde 1/1-6.gd" type="Script" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Porte_Labo.png 0"
@@ -75,7 +76,6 @@ visible = false
 [node name="HUD HUB" parent="GUI" instance=ExtResource( 15 )]
 
 [node name="Nom Niveaux" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -226,6 +226,14 @@ script = ExtResource( 14 )
 position = Vector2( 688, 408 )
 shape = SubResource( 3 )
 
+[node name="1-6" type="Area2D" parent="Portes Area"]
+collision_layer = 0
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portes Area/1-6"]
+position = Vector2( 816, 408 )
+shape = SubResource( 3 )
+
 [node name="Test Perso" parent="." instance=ExtResource( 4 )]
 position = Vector2( 100, 398 )
 
@@ -239,3 +247,5 @@ position = Vector2( 100, 398 )
 [connection signal="body_exited" from="Portes Area/1-4" to="Portes Area/1-4" method="_on_12_body_exited"]
 [connection signal="body_entered" from="Portes Area/1-5" to="Portes Area/1-5" method="_on_12_body_entered"]
 [connection signal="body_exited" from="Portes Area/1-5" to="Portes Area/1-5" method="_on_12_body_exited"]
+[connection signal="body_entered" from="Portes Area/1-6" to="Portes Area/1-6" method="_on_16_body_entered"]
+[connection signal="body_exited" from="Portes Area/1-6" to="Portes Area/1-6" method="_on_16_body_exited"]

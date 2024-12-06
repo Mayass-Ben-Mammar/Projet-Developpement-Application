@@ -1,15 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Arbres/Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Background/FondHM.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Police d'écriture/Pixels.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Police d'écriture/Pixeled.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Code/Main Menu.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Fleur/Fleur.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
 extra_spacing_bottom = 19
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 4 )
@@ -62,7 +68,31 @@ theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 1 )
 text = "option"
 
+[node name="Demo" type="Label" parent="CanvasLayer"]
+margin_left = 478.0
+margin_top = 150.0
+margin_right = 802.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 3 )
+text = "Ce jeu n'est qu'une DEMO"
+
+[node name="Fleur" type="TextureRect" parent="CanvasLayer"]
+margin_left = 575.0
+margin_top = 196.0
+margin_right = 703.0
+margin_bottom = 324.0
+texture = ExtResource( 6 )
+
+[node name="TextFleur" type="Label" parent="CanvasLayer"]
+margin_left = 544.0
+margin_top = 338.0
+margin_right = 737.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 3 )
+text = "Voici une fleur"
+
 [node name="Container" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
