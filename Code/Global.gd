@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_FILE := "user://sauvegarde.save"
-var J_donnees := {}
+var J_donnees = {}
 
 var max_lives := 200
 var lives := max_lives

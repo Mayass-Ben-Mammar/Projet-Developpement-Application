@@ -21,17 +21,14 @@ var direction := 1
 
 const LASER = preload("res://Scene/Laser.tscn")
 
-func _physics_process(delta):
+func _process(delta):
 	
 	match state:
 		States.AIR:
 			if is_on_floor():
 				state = States.FLOOR
 				continue
-			if Velocity.y < 0:
-				$Sprite.play("Saute")
-			else:
-				$Sprite.play("Tombe")
+			dans_air()
 			if Input.is_action_pressed("right"):
 				Velocity.x = SPEED
 				$Sprite.flip_h = false
@@ -45,50 +42,19 @@ func _physics_process(delta):
 		States.FLOOR:
 			if not is_on_floor():
 				state = States.AIR
-			if cours == true:
-				SPEED = RUNSPEED
-				fonce_roule = "Fonce"
-				$AudioStreamPlayer.stream = fonce_son
-			else:
-				SPEED = 200
-				fonce_roule = "Roule"
-				$AudioStreamPlayer.stream = roule_son
-			if Input.is_action_pressed("right"):
-				if double_tap == true:
-					cours = true
-				elif is_on_wall():
-					cours = false
-				Velocity.x = SPEED
-				$Sprite.play(fonce_roule)
-				$Sprite.flip_h = false
-				$AudioStreamPlayer.play()
-			elif Input.is_action_pressed("left"):
-				if double_tap == true:
-					cours = true
-				elif is_on_wall():
-					cours = false
-				Velocity.x = -SPEED
-				$Sprite.play(fonce_roule)
-				$Sprite.flip_h = true
-				$AudioStreamPlayer.play()
-			else:
-				Velocity.x = lerp(Velocity.x, 0, 0.1)
-				$Sprite.play("Inactif")
+			C_ou_F()
+			Rouler()
+			if Input.is_action_just_pressed("down"):
+				position.y += 1
+			if Input.is_action_just_released("right") or Input.is_action_just_released("left"):
+				cours = false
+				double_tap = true
+				$Courir.start()
 			if Input.is_action_just_pressed("jump"):
 				$AudioStreamPlayer.stream = saut_son
 				$AudioStreamPlayer.play()
 				Velocity.y = JFORCE
 				state = States.AIR
-			if Input.is_action_just_pressed("down"):
-				position.y += 1
-			if Input.is_action_just_released("right"):
-				cours = false
-				double_tap = true
-				$Courir.start()
-			if Input.is_action_just_released("left"):
-				cours = false
-				double_tap = true
-				$Courir.start()
 			move_and_fall()
 			Fire()
 
@@ -158,3 +124,46 @@ func _on_Area2D_body_entered(body):
 	if body.name == "LaserM":
 		mal(body.velocity.x)
 		Global.lose_life(10)
+
+
+func dans_air():
+	if Velocity.y < 0:
+		$Sprite.play("Saute")
+	else:
+		$Sprite.play("Tombe")
+
+
+func C_ou_F():
+	if cours == true:
+		SPEED = RUNSPEED
+		fonce_roule = "Fonce"
+		$AudioStreamPlayer.stream = fonce_son
+	else:
+		SPEED = 200
+		fonce_roule = "Roule"
+		$AudioStreamPlayer.stream = roule_son
+
+
+func Courir():
+	if double_tap == true:
+		cours = true
+	elif is_on_wall():
+		cours = false
+
+
+func Rouler():
+	if Input.is_action_pressed("right"):
+		Courir()
+		Velocity.x = SPEED
+		$Sprite.play(fonce_roule)
+		$Sprite.flip_h = false
+		$AudioStreamPlayer.play()
+	elif Input.is_action_pressed("left"):
+		Courir()
+		Velocity.x = -SPEED
+		$Sprite.play(fonce_roule)
+		$Sprite.flip_h = true
+		$AudioStreamPlayer.play()
+	else:
+		Velocity.x = lerp(Velocity.x, 0, 0.1)
+		$Sprite.play("Inactif")
