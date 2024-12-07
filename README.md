@@ -6,10 +6,10 @@ Ce repository contient le code source et une démo jouable sur PsVita d'un jeu �
 MATOS est un jeu où nous découvrons un monde oublié rempli de mystères, au fur et à mesure de l'histoire notre personnage principal sera confronté à des obstacles de plus en plus durs.
 
 ## Outils utilisés
-Godot 3.5 pour PsVita : [](https://github.com/SonicMastr/godot-vita) <br>
-Documentation de Godot : [](https://docs.godotengine.org/en/3.5/) <br>
-Musiques et bruits : [](https://freesound.org/) <br>
-Police d'ecriture : [](https://www.dafont.com/fr/) <br>
+[Godot 3.5 pour PsVita](https://github.com/SonicMastr/godot-vita) <br>
+[Documentation de Godot](https://docs.godotengine.org/en/3.5/) <br>
+[Musiques et bruits](https://freesound.org/) <br>
+[Police d'ecriture](https://www.dafont.com/fr/) <br>
 
 ## Pour y jouer
 ***Il est nécesaire d'avoir un PsVita hacké/cracké pour pouvoir installé le .VPK*** <br>
