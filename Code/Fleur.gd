@@ -1,7 +1,7 @@
 extends Area2D
 
 signal FleurRecuperer
-export var NB = 1
+export var NB := 1
 
 func _ready():
 	$AnimationPlayer.play("Normal")

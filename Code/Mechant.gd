@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-var velocity = Vector2()
-var speed = 50
-export var direction = -1
-export var smart = true
+var velocity := Vector2()
+var speed := 50
+export var direction := -1
+export var smart := true
 
 func _ready():
 	if direction == 1:

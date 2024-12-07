@@ -1,8 +1,8 @@
 extends Area2D
 
-var tirer = 1
-const LASER = preload("res://Scene/Laser.tscn")
-var PV = 200
+var tirer := 1
+const LASER := preload("res://Scene/Laser.tscn")
+var PV := 200
 
 func _physics_process(delta):
 	$PV.rect_size.x = PV

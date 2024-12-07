@@ -1,8 +1,8 @@
 extends Node2D
 
 onready var save = Global.J_donnees
-var spawn = true
-var Mechant = load("res://Scene/Mechant.tscn")
+var spawn := true
+var Mechant := load("res://Scene/Mechant.tscn")
 
 func _ready():
 	$"Test Perso/Camera2D".limit_top = -320

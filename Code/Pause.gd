@@ -1,6 +1,6 @@
 extends Control
 
-var est_en_pause = false setget en_pause
+var est_en_pause := false setget en_pause
 
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):

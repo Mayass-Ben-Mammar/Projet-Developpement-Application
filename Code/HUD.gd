@@ -1,6 +1,6 @@
 extends Control
 
-var Nb_Coins = 0
+var Nb_Coins := 0
 
 func _ready():
 	Load_hearts()

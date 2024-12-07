@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var save = Global.J_donnees
-var entree13 = false
+var entree13 := false
 
 func _on_12_body_entered(body: PhysicsBody2D):
 	entree13 = true

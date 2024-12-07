@@ -1,6 +1,6 @@
 extends Area2D
 
-var entree31 = false
+var entree31 := false
 
 func _ready():
 	entree31 = false

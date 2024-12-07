@@ -1,6 +1,6 @@
 extends Area2D
 
-var entree11 = false
+var entree11 := false
 
 func _on_11_body_entered(body: PhysicsBody2D):
 	entree11 = true

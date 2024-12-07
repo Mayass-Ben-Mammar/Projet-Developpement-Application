@@ -1,14 +1,14 @@
 extends Node
 
-const SAVE_FILE = "user://sauvegarde.save"
-var J_donnees = {}
+const SAVE_FILE := "user://sauvegarde.save"
+var J_donnees := {}
 
-var max_lives = 200
-var lives = max_lives
+var max_lives := 200
+var lives := max_lives
 var hud
-var dir = Directory.new()
-var position = Vector2()
-var NB_Fleur = 0
+var dir := Directory.new()
+var position := Vector2()
+var NB_Fleur := 0
 
 func _ready():
 	charger()

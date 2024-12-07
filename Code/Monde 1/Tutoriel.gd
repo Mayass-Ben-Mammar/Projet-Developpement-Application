@@ -1,10 +1,10 @@
 extends Control
 
-var mouvement_tut = false
-var saut_tut = false
-var laser_tut = false
-var fonce_tut = false
-var Mechant = load("res://Scene/Mechant.tscn")
+var mouvement_tut := false
+var saut_tut := false
+var laser_tut := false
+var fonce_tut := false
+var Mechant := load("res://Scene/Mechant.tscn")
 
 func _on_Mouvement2_body_entered(body):
 	mouvement_tut = true

@@ -2,7 +2,7 @@ extends Node
 
 onready var save = Global.J_donnees
 
-var monde_actuelle = 1
+var monde_actuelle := 1
 
 func _ready():
 	if save.premiere_fois == true:

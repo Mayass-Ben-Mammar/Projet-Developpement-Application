@@ -1,8 +1,8 @@
 extends Node
 
 onready var save = Global.J_donnees
-var valM = 0
-var valS = 0
+var valM := 0
+var valS := 0
 
 func _ready():
 	$CanvasLayer/Container.hide()

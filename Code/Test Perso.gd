@@ -1,23 +1,23 @@
 extends KinematicBody2D
 
-enum States{AIR = 1, FLOOR, WALL}
+enum States{AIR = 1, FLOOR}
 var state = States.FLOOR
 
-var roule_son = load("res://Assets/Son/260778__squirmtheverm__rolling-ball-loop.wav")
-var fonce_son = load("res://Assets/Son/fonce.wav")
-var saut_son = load("res://Assets/Son/saut.wav")
+var roule_son := load("res://Assets/Son/260778__squirmtheverm__rolling-ball-loop.wav")
+var fonce_son := load("res://Assets/Son/fonce.wav")
+var saut_son := load("res://Assets/Son/saut.wav")
 
-var SPEED = 200
-const RUNSPEED = 500
-const GRAVITY = 30
-const JFORCE = -1000
-var Velocity = Global.position
-var Coins = 0
-var hurt = 0
-var double_tap = false
-var cours = false
-var fonce_roule = "Roule"
-var direction = 1 
+var SPEED := 200
+const RUNSPEED := 500
+const GRAVITY := 30
+const JFORCE := -1000
+var Velocity := Vector2()
+var Coins := 0
+var hurt := 0
+var double_tap := false
+var cours := false
+var fonce_roule := "Roule"
+var direction := 1 
 
 const LASER = preload("res://Scene/Laser.tscn")
 

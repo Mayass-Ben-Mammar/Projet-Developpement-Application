@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-var velocity = Vector2()
-var SPEED = 1000
-var direction = 1
+var velocity := Vector2()
+var SPEED := 1000
+var direction := 1
 
 func _ready():
 	velocity.x = SPEED * direction
