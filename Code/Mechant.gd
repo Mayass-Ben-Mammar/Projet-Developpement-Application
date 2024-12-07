@@ -3,18 +3,15 @@ extends KinematicBody2D
 var velocity := Vector2()
 var speed := 50
 export var direction := -1
-export var smart := true
 
 func _ready():
 	if direction == 1:
 		$AnimatedSprite.flip_h = true
-	$Floor_checker.enabled = smart
-	if smart == true:
-		set_modulate(Color(1.2,0.5,1))
+		$Floor_checker.position.x = -32
 
-func _physics_process(delta):
-	
-	if is_on_wall() or (is_on_floor() and !$Floor_checker.is_colliding() and smart):
+
+func _physics_process(_delta):
+	if is_on_wall() or (is_on_floor() and !$Floor_checker.is_colliding()):
 		direction *= -1
 		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
 		$Floor_checker.position.x *= -1

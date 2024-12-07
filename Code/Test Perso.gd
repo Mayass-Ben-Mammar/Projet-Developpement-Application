@@ -21,7 +21,7 @@ var direction := 1
 
 const LASER = preload("res://Scene/Laser.tscn")
 
-func _process(delta):
+func _process(_delta):
 	
 	match state:
 		States.AIR:
@@ -77,7 +77,8 @@ func move_and_fall():
 	Velocity = move_and_slide(Velocity, Vector2.UP)
 
 func _on_Fall_zone_body_entered(body):
-	get_tree().change_scene("res://Scene/Perdu.tscn")
+	if body.name == "Test Perso":
+		get_tree().change_scene("res://Scene/Perdu.tscn")
 
 
 func bounce():

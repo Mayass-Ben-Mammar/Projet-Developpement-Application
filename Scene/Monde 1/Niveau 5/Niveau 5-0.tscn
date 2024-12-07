@@ -191,7 +191,6 @@ shape = SubResource( 21 )
 collision_mask = 33
 
 [connection signal="body_entered" from="Boss signal" to="." method="_on_Boss_signal_body_entered"]
-[connection signal="body_entered" from="Boss signal" to="Boss signal" method="_on_Boss_signal_body_entered"]
 [connection signal="body_entered" from="Fall zone" to="Boss signal/Test Perso" method="_on_Fall_zone_body_entered"]
 [connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]
 [connection signal="FleurRecuperer" from="Fleur" to="GUI/HUD" method="_on_Fleur_FleurRecuperer"]

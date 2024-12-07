@@ -14,10 +14,11 @@ func _ready():
 	if save.Fleur17 == 1:
 		$Fleur.queue_free()
 		$GUI/HUD/Fleur1A.show()
+	save.B11 = 0
 
 
-func _physics_process(delta):
-	if is_instance_valid($"Mini Boss") == false:
+func _process(_delta):
+	if save.B11 == 1:
 		$N5VH/CollisionShape2D.set_disabled(false)
 		$Portes.show()
 		if save.Fleur17 == 0:
@@ -25,18 +26,18 @@ func _physics_process(delta):
 			$Fleur.show()
 
 
-func _on_Fleur_FleurRecuperer(val):
+func _on_Fleur_FleurRecuperer(_val):
 	save.Fleur17 = 1
 	Global.sauvegarder()
 	
 
-func _on_Boss_signal_body_entered(body : PhysicsBody2D):
+func _on_Boss_signal_body_entered(_body : PhysicsBody2D):
 	$"Boss signal/Test Perso/Camera2D".limit_top = 0
 	$"Boss signal/Test Perso/Camera2D".limit_right = 960
 	$"Mini Boss/AnimationPlayer".play("Debut")
-	if is_instance_valid($"Dossier Mechant/Mechant") == true:
+	if get_node_or_null("Dossier Mechant/Mechant") != null:
 		$"Dossier Mechant/Mechant".queue_free()
-	if is_instance_valid($"Dossier Mechant/Mechant2") == true:
+	if get_node_or_null("Dossier Mechant/Mechant2") != null:
 		$"Dossier Mechant/Mechant2".queue_free()
-	if is_instance_valid($"Dossier Mechant/Mechant3") == true:
+	if get_node_or_null("Dossier Mechant/Mechant3") != null:
 		$"Dossier Mechant/Mechant3".queue_free()

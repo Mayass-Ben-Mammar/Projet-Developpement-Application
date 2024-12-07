@@ -3,8 +3,9 @@ extends Area2D
 var tirer := 1
 const LASER := preload("res://Scene/Laser.tscn")
 var PV := 200
+onready var save = Global.J_donnees
 
-func _physics_process(delta):
+func _process(_delta):
 	$PV.rect_size.x = PV
 	if PV == 0:
 		$PV.hide()
@@ -28,32 +29,25 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			_on_Timer_timeout()
 			$Timer.start()
 	elif anim_name == 'Fini':
+		save.B11 = 1
 		queue_free()
+
+
+func Appel_L(val):
+	var f = LASER.instance()
+	f.name = "LaserM"
+	f.SPEED = -1000
+	f.D_ou_G(-1)
+	get_parent().add_child(f)
+	f.position.x = 848
+	f.position.y = 544-val
 
 
 func _on_Timer_timeout():
 	tirer = randi()
 	if tirer > 0 and tirer <= 1431655765:
-		var f = LASER.instance()
-		f.name = "LaserM"
-		f.SPEED = -1000
-		f.D_ou_G(-1)
-		get_parent().add_child(f)
-		f.position.y = 544-80
-		f.position.x = 848
+		Appel_L(80)
 	elif tirer > 1431655766 and tirer <= 2863311530:
-		var f = LASER.instance()
-		f.name = "LaserM"
-		f.SPEED = -1000
-		f.D_ou_G(-1)
-		get_parent().add_child(f)
-		f.position.y = 544-197
-		f.position.x = 848
+		Appel_L(197)
 	elif tirer > 2863311531 and tirer <= 4294967295:
-		var f = LASER.instance()
-		f.name = "LaserM"
-		f.SPEED = -1000
-		f.D_ou_G(-1)
-		get_parent().add_child(f)
-		f.position.y = 544-315
-		f.position.x = 848
+		Appel_L(315)

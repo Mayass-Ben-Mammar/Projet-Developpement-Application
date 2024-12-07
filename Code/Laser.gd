@@ -9,7 +9,7 @@ func _ready():
 	$AudioStreamPlayer.play()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_on_wall():
 		queue_free()
 	$AnimatedSprite.play("Projectile")

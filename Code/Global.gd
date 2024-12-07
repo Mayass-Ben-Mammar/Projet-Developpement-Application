@@ -43,6 +43,7 @@ func charger():
 			"Fleur11": 0,  "Fleur12": 0,  "Fleur13": 0,  "Fleur14": 0,  "Fleur15": 0,  "Fleur16": 0,  "Fleur17": 0,
 			"Fleur18": 0,  "Fleur19": 0,  "Fleur110": 0,  "Fleur111": 0,  "Fleur112": 0,  "Fleur113": 0,  "Fleur114": 0,
 			"Fleur115": 0,
+			"B11": 0,
 			"N21": 0,  "N22": 0,  "N23": 0,  "N24": 0,  "N25": 0,
 			"Fleur21": 0,  "Fleur22": 0,  "Fleur23": 0,  "Fleur24": 0,  "Fleur25": 0,  "Fleur26": 0,  "Fleur27": 0,
 			"Fleur28": 0,  "Fleur29": 0,  "Fleur210": 0,  "Fleur211": 0,  "Fleur212": 0,  "Fleur213": 0,  "Fleur214": 0,

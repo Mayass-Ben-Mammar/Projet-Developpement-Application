@@ -11,6 +11,7 @@
 [ext_resource path="res://Scene/Pause.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scene/HUD.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scene/Fleur.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scene/Mechant.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -93,9 +94,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 47, 223 )
-
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 40, 39.75 )
 
@@ -139,13 +137,13 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -262139, 1, 0 )
 
-[node name="Spawn mechant" type="Node2D" parent="."]
+[node name="Dossier Mechants" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="Spawn mechant"]
+[node name="Mechant" parent="Dossier Mechants" instance=ExtResource( 12 )]
+position = Vector2( 1101, 416 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn mechant/Area2D"]
-position = Vector2( 1648, 225 )
-shape = SubResource( 13 )
+[node name="Mechant2" parent="Dossier Mechants" instance=ExtResource( 12 )]
+position = Vector2( 1819, 413 )
 
 [node name="N2VH" type="Area2D" parent="."]
 script = ExtResource( 6 )
@@ -178,7 +176,6 @@ collision_layer = 4
 position = Vector2( 1426, 613.75 )
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="Spawn mechant/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="N2VH" to="N2VH" method="_on_N2VH_body_entered"]
 [connection signal="body_exited" from="N2VH" to="N2VH" method="_on_N2VH_body_exited"]
 [connection signal="FleurRecuperer" from="Fleur" to="." method="_on_Fleur_FleurRecuperer"]

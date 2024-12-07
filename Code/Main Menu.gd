@@ -8,7 +8,7 @@ func _ready():
 	$CanvasLayer/Container.hide()
 	Musique.jouer_music(2)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	Global.NB_Fleur = 0
 	Global.Compteur(1)
 	if Input.is_action_just_pressed("jump"):

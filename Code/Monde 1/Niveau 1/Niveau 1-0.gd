@@ -11,6 +11,6 @@ func _ready():
 		$Fleur.queue_free()
 		$GUI/HUD/Fleur1A.show()
 
-func _on_Fleur_FleurRecuperer(val):
+func _on_Fleur_FleurRecuperer(_val):
 	save.Fleur11 = 1
 	Global.sauvegarder()

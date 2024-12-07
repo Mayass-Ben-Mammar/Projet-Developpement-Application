@@ -13,6 +13,6 @@ func _ready():
 		$GUI/HUD/Fleur2A.show()
 
 
-func _on_Fleur_FleurRecuperer(val):
+func _on_Fleur_FleurRecuperer(_val):
 	save.Fleur16 = 1
 	Global.sauvegarder()
