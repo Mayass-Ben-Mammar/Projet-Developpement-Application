@@ -5,5 +5,5 @@ func _on_PlayButton_pressed():
 	Transition.Change_Niveau("res://Scene/Main Menu.tscn")
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("start"):
 		_on_PlayButton_pressed()
