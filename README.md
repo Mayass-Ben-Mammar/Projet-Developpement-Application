@@ -13,4 +13,5 @@ MATOS est un jeu où nous découvrons un monde oublié rempli de mystères, au f
 
 ## Pour y jouer
 ***Il est nécesaire d'avoir un PsVita hacké/cracké pour pouvoir installé le .VPK*** <br>
+Le .VPK est ici : 'VPK/MATOS_Demo.vpk' car il est trop gros pour etre mis avec le code source <br>
 Utilisez 'VitaShell' afin de connecter votre PSVita à un ordinateur, déplacez le fichier.VPK dans votre console depuis votre PC, une fois le déplacement fini, installez le.VPK et amusez-vous bien !
